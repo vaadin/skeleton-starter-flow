@@ -30,6 +30,7 @@
 
         <frontend.working.directory>src/main/frontend</frontend.working.directory>
         <vaadin.frontend.path>VAADIN/static/frontend</vaadin.frontend.path>
+        <flow.project.version>0.1.13-SNAPSHOT</flow.project.version>
     </properties>
 
     <repositories>
@@ -48,7 +49,7 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow</artifactId>
-            <version>0.1.13-SNAPSHOT</version>
+            <version>${flow.project.version}</version>
         </dependency>
 
         <dependency>
@@ -173,7 +174,7 @@
                 <dependency>
                     <groupId>com.vaadin</groupId>
                     <artifactId>flow-server-production-mode</artifactId>
-                    <version>${project.version}</version>
+                    <version>${flow.project.version}</version>
                 </dependency>
             </dependencies>
 
