@@ -30,7 +30,7 @@
 
         <frontend.working.directory>src/main/frontend</frontend.working.directory>
         <vaadin.frontend.path>VAADIN/static/frontend</vaadin.frontend.path>
-        <flow.project.version>0.1.13</flow.project.version>
+        <flow.project.version>0.1.14</flow.project.version>
     </properties>
 
     <repositories>
