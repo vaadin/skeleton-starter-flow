@@ -1,1 +1,9 @@
 /target/
+.idea/
+bower_components/
+node/
+node_modules/
+etc/
+
+*.iml
+.DS_Store
