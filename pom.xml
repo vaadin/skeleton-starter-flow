@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>skeleton</artifactId>
-    <version>0.0.1</version>
+    <version>0.1.16</version>
     <name>Flow Application Skeleton</name>
     <packaging>war</packaging>
 
