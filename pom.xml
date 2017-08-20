@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>skeleton</artifactId>
-    <version>0.1.17</version>
     <name>Flow Application Skeleton</name>
+    <version>0.1.18</version>
     <packaging>war</packaging>
 
     <properties>
@@ -30,7 +30,7 @@
 
         <frontend.working.directory>src/main/frontend</frontend.working.directory>
         <vaadin.frontend.path>VAADIN/static/frontend</vaadin.frontend.path>
-        <flow.project.version>0.1.17</flow.project.version>
+        <flow.project.version>0.1.18</flow.project.version>
     </properties>
 
     <repositories>
