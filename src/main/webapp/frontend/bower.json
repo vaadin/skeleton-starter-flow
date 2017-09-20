@@ -14,7 +14,7 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "2.0.0",
+    "polymer": "~2.0.2",
     "paper-button": "~2.0.0",
     "paper-input": "~2.0.1",
     "paper-spinner": "~2.0.0",

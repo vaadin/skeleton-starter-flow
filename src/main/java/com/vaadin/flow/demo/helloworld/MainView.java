@@ -24,7 +24,7 @@ import com.vaadin.ui.Composite;
 /**
  * The main view contains a simple label element and a template element.
  */
-@StyleSheet("context://styles.css")
+@StyleSheet("frontend://styles.css")
 public class MainView extends Composite<Div> implements View {
 
     public MainView() {
