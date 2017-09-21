@@ -5,7 +5,7 @@
     <groupId>com.example</groupId>
     <artifactId>skeleton</artifactId>
     <name>Flow Application Skeleton</name>
-    <version>0.1.23</version>
+    <version>1.0.0.alpha1</version>
     <packaging>war</packaging>
 
     <properties>
