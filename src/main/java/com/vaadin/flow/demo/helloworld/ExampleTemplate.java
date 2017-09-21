@@ -15,11 +15,11 @@
  */
 package com.vaadin.flow.demo.helloworld;
 
-import com.vaadin.annotations.HtmlImport;
-import com.vaadin.annotations.Tag;
 import com.vaadin.flow.demo.helloworld.ExampleTemplate.ExampleModel;
-import com.vaadin.flow.template.PolymerTemplate;
-import com.vaadin.flow.template.model.TemplateModel;
+import com.vaadin.flow.model.TemplateModel;
+import com.vaadin.ui.Tag;
+import com.vaadin.ui.common.HtmlImport;
+import com.vaadin.ui.polymertemplate.PolymerTemplate;
 
 /**
  * Simple template example.
@@ -31,7 +31,7 @@ public class ExampleTemplate extends PolymerTemplate<ExampleModel> {
     /**
      * Template model which defines the single "name" property.
      */
-    public static interface ExampleModel extends TemplateModel {
+    public interface ExampleModel extends TemplateModel {
 
         void setName(String name);
     }
