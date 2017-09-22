@@ -33,6 +33,7 @@
         <frontend.working.directory>${project.basedir}/src/main/webapp/frontend</frontend.working.directory>
         <jetty.extra.resource.base>${frontend.working.directory}</jetty.extra.resource.base>
         <npm.build.goal>run devMode</npm.build.goal>
+        <war.excludes>**/node_modules/,**/node/,**/build/,**/etc/</war.excludes>
     </properties>
 
     <repositories>
@@ -171,7 +172,18 @@
                             <Implementation-Version>${project.version}</Implementation-Version>
                         </manifestEntries>
                     </archive>
-                    <warSourceExcludes>**/node_modules/,**/node/,**/build/,**/etc/</warSourceExcludes>
+                    <webResources>
+                        <resource>
+                            <directory>${jetty.extra.resource.base}</directory>
+                            <excludes>
+                                <exclude>**/node/</exclude>
+                                <exclude>**/node_modules/</exclude>
+                                <exclude>**/etc/</exclude>
+                            </excludes>
+                        </resource>
+                    </webResources>
+                    <warSourceExcludes>${war.excludes}</warSourceExcludes>
+                    <packagingExcludes>${war.excludes}</packagingExcludes>
                 </configuration>
             </plugin>
         </plugins>
@@ -189,6 +201,7 @@
             <properties>
                 <npm.build.goal>run prodMode</npm.build.goal>
                 <jetty.extra.resource.base>${frontend.working.directory}/build</jetty.extra.resource.base>
+                <war.excludes>**/frontend/bower_components/,**/node_modules/,**/node/,**/build/,**/etc/</war.excludes>
             </properties>
 
             <dependencies>
@@ -198,24 +211,6 @@
                     <version>${flow.project.version}</version>
                 </dependency>
             </dependencies>
-
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-war-plugin</artifactId>
-                        <version>${maven.war.plugin.version}</version>
-                        <configuration>
-                            <webResources>
-                                <resource>
-                                    <directory>${frontend.working.directory}/build</directory>
-                                </resource>
-                            </webResources>
-                            <warSourceExcludes>**/frontend/bower_components/,**/node_modules/,**/node/,**/build/,**/etc/</warSourceExcludes>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
         </profile>
     </profiles>
 </project>
