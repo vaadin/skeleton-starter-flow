@@ -14,22 +14,15 @@
   ~ the License.
   -->
 
-<!-- Dependency resources -->
-<link rel="import" href="./bower_components/polymer/polymer-element.html">
+<!-- Adding Valo theme for vaadin-button -->
+<link rel="import" href="./bower_components/vaadin-valo-theme/vaadin-button.html">
 
-<!-- Defines the example-template element -->
-<dom-module id="example-template">
-    <template>
-        <span>[[value]]</span>
-    </template>
-
-    <!-- Polymer boilerplate to register the example-template element -->
-    <script>
-        class ExampleTemplate extends Polymer.Element {
-            static get is() {
-                return 'example-template'
-            }
+<custom-style>
+    <!-- This is where your App's styling should go. You can use .css files too. -->
+    <style>
+        html,
+        body {
+            height: auto;
         }
-        customElements.define(ExampleTemplate.is, ExampleTemplate);
-    </script>
-</dom-module>
+    </style>
+</custom-style>

@@ -29,15 +29,19 @@ import com.vaadin.ui.polymertemplate.PolymerTemplate;
 public class ExampleTemplate extends PolymerTemplate<ExampleModel> {
 
     /**
-     * Template model which defines the single "name" property.
+     * Template model which defines the single "value" property.
      */
     public interface ExampleModel extends TemplateModel {
 
-        void setName(String name);
+        void setValue(String value);
     }
 
     public ExampleTemplate() {
-        // Set the initial value to the "name" property.
-        getModel().setName("World!");
+        // Set the initial value to the "value" property.
+        getModel().setValue("Not clicked");
+    }
+
+    public void setValue(String value) {
+        getModel().setValue(value);
     }
 }

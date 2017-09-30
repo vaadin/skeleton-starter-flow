@@ -15,25 +15,24 @@
  */
 package com.vaadin.flow.demo.helloworld;
 
-import com.vaadin.flow.router.View;
-import com.vaadin.ui.Composite;
-import com.vaadin.ui.common.StyleSheet;
-import com.vaadin.ui.html.Div;
-import com.vaadin.ui.html.Label;
+import com.vaadin.router.Route;
+import com.vaadin.ui.button.Button;
+import com.vaadin.ui.common.HtmlImport;
+import com.vaadin.ui.layout.VerticalLayout;
 
 /**
- * The main view contains a simple label element and a template element.
+ * The main view contains a button and a template element.
  */
-@StyleSheet("frontend://styles.css")
-public class MainView extends Composite<Div> implements View {
+@HtmlImport("frontend://styles.html")
+@Route("")
+public class MainView extends VerticalLayout {
 
     public MainView() {
-        // This is just a simple label created via Elements API
-        Label label = new Label("Hello");
-        getContent().add(label);
-        // This is a simple template example
         ExampleTemplate template = new ExampleTemplate();
-        getContent().add(template);
+
+        Button button =  new Button("Click me", event -> template.setValue("Clicked!"));
+
+        add(button, template);
     }
 
 }

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>skeleton</artifactId>
-    <name>Skeleton Starter Flow</name>
+    <name>Skeleton Starter for Vaadin Flow</name>
     <version>1.0.0.alpha2</version>
     <packaging>war</packaging>
 
