@@ -15,29 +15,17 @@
  */
 package com.vaadin.flow.demo.helloworld;
 
-import javax.servlet.annotation.WebServlet;
-
-import com.vaadin.flow.demo.helloworld.Servlet.MyRouterConfigurator;
-import com.vaadin.flow.router.RouterConfiguration;
-import com.vaadin.flow.router.RouterConfigurator;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.server.VaadinServletConfiguration;
 
+import javax.servlet.annotation.WebServlet;
+
 /**
  * The main servlet for the application.
+ * <p>
+ * It is not mandatory to have the Servlet, since Flow will automatically register a Servlet to any app with at least one {@code @Route} to server root context.
  */
 @WebServlet(urlPatterns = "/*", name = "UIServlet", asyncSupported = true)
-@VaadinServletConfiguration(routerConfigurator = MyRouterConfigurator.class, productionMode = false)
+@VaadinServletConfiguration(usingNewRouting = true, productionMode = false)
 public class Servlet extends VaadinServlet {
-
-    /**
-     * The router configurator defines the how to map URLs to views.
-     */
-    public static class MyRouterConfigurator implements RouterConfigurator {
-        @Override
-        public void configure(RouterConfiguration configuration) {
-            // For the root, only show the main view without any sub view
-            configuration.setRoute("", MainView.class);
-        }
-    }
 }
