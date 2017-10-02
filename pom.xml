@@ -16,6 +16,7 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
         <!-- Dependencies -->
+        <vaadin.project.version>10.0.0.alpha3</vaadin.project.version>
         <flow.project.version>1.0.0.alpha3</flow.project.version>
         <servlet.api.version>3.1.0</servlet.api.version>
         <selenium.server.version>3.4.0</selenium.server.version>
@@ -50,14 +51,8 @@
     <dependencies>
         <dependency>
             <groupId>com.vaadin</groupId>
-            <artifactId>flow</artifactId>
-            <version>${flow.project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>flow-components</artifactId>
-            <version>${flow.project.version}</version>
+            <artifactId>vaadin</artifactId>
+            <version>${vaadin.project.version}</version>
         </dependency>
 
         <dependency>
@@ -103,7 +98,7 @@
                     <stopKey>foo</stopKey>
                 </configuration>
                 <executions>
-                    <!-- start and stop jetty (running our app) when running 
+                    <!-- start and stop jetty (running our app) when running
                         integration tests -->
                     <execution>
                         <id>start-jetty</id>
