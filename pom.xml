@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>skeleton</artifactId>
@@ -31,7 +31,6 @@
         <npm.version>5.3.0</npm.version>
 
         <frontend.working.directory>${project.basedir}/src/main/webapp/frontend</frontend.working.directory>
-        <jetty.extra.resource.base>${frontend.working.directory}</jetty.extra.resource.base>
         <npm.build.goal>run devMode</npm.build.goal>
         <war.excludes>**/node_modules/,**/node/,**/build/,**/etc/</war.excludes>
     </properties>
@@ -102,18 +101,9 @@
                     <stopPort>8081</stopPort>
                     <stopWait>5</stopWait>
                     <stopKey>foo</stopKey>
-                    <!-- Prevent Jetty from scanning the classpath. -->
-                    <!-- Speeds up startup time significantly -->
-                    <webAppConfig>
-                        <webInfIncludeJarPattern>.*/flow-.*.jar$|.*/test-resources-.*.jar$</webInfIncludeJarPattern>
-                        <containerIncludeJarPattern>^$</containerIncludeJarPattern>
-                        <resourceBases>
-                            <resourceBase>${jetty.extra.resource.base}</resourceBase>
-                        </resourceBases>
-                    </webAppConfig>
                 </configuration>
                 <executions>
-                    <!-- start and stop jetty (running our app) when running
+                    <!-- start and stop jetty (running our app) when running 
                         integration tests -->
                     <execution>
                         <id>start-jetty</id>
@@ -172,16 +162,6 @@
                             <Implementation-Version>${project.version}</Implementation-Version>
                         </manifestEntries>
                     </archive>
-                    <webResources>
-                        <resource>
-                            <directory>${jetty.extra.resource.base}</directory>
-                            <excludes>
-                                <exclude>**/node/</exclude>
-                                <exclude>**/node_modules/</exclude>
-                                <exclude>**/etc/</exclude>
-                            </excludes>
-                        </resource>
-                    </webResources>
                     <warSourceExcludes>${war.excludes}</warSourceExcludes>
                     <packagingExcludes>${war.excludes}</packagingExcludes>
                 </configuration>
@@ -200,7 +180,6 @@
 
             <properties>
                 <npm.build.goal>run prodMode</npm.build.goal>
-                <jetty.extra.resource.base>${frontend.working.directory}/build</jetty.extra.resource.base>
                 <war.excludes>**/frontend/bower_components/,**/node_modules/,**/node/,**/build/,**/etc/</war.excludes>
             </properties>
 
@@ -211,6 +190,45 @@
                     <version>${flow.project.version}</version>
                 </dependency>
             </dependencies>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>${maven.war.plugin.version}</version>
+                        <configuration>
+                            <webResources>
+                                <resource>
+                                    <directory>${frontend.working.directory}/build</directory>
+                                    <excludes>
+                                        <exclude>**/node/</exclude>
+                                        <exclude>**/node_modules/</exclude>
+                                        <exclude>**/etc/</exclude>
+                                    </excludes>
+                                </resource>
+                            </webResources>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.eclipse.jetty</groupId>
+                        <artifactId>jetty-maven-plugin</artifactId>
+                        <configuration>
+                            <scanIntervalSeconds>-1</scanIntervalSeconds>
+                            <stopPort>8081</stopPort>
+                            <stopWait>5</stopWait>
+                            <stopKey>foo</stopKey>
+                            <webAppConfig>
+                                <resourceBases>
+                                    <resourceBase>${project.basedir}/src/main/webapp</resourceBase>
+                                    <resourceBase>${frontend.working.directory}/build</resourceBase>
+                                </resourceBases>
+                            </webAppConfig>>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
 </project>
