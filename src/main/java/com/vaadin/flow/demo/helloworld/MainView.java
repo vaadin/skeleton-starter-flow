@@ -23,7 +23,7 @@ import com.vaadin.ui.layout.VerticalLayout;
 /**
  * The main view contains a button and a template element.
  */
-@HtmlImport("frontend://styles.html")
+@HtmlImport("styles.html")
 @Route("")
 public class MainView extends VerticalLayout {
 

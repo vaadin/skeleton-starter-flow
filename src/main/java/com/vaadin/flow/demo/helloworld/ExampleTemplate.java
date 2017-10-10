@@ -25,7 +25,7 @@ import com.vaadin.ui.polymertemplate.PolymerTemplate;
  * Simple template example.
  */
 @Tag("example-template")
-@HtmlImport("frontend://ExampleTemplate.html")
+@HtmlImport("ExampleTemplate.html")
 public class ExampleTemplate extends PolymerTemplate<ExampleModel> {
 
     /**
