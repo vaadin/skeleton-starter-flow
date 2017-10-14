@@ -19,6 +19,6 @@
   ],
   "dependencies": {
     "polymer": "~2.0.2",
-    "vaadin-core": "2.0.0-alpha3"
+    "vaadin-core": "2.0.0-alpha4"
   }
 }
