@@ -13,8 +13,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "prodMode": "bower install && polymer build",
-    "devMode": "bower install"
+    "prodMode": "bower install && polymer build"
   },
   "author": "",
   "license": "Apache-2.0"
