@@ -8,13 +8,12 @@
     "url": "git@github.com:vaadin/flow-application-skeleton.git"
   },
   "dependencies": {
-    "bower": "^1.8.2",
-    "polymer-cli": "latest"
+    "bower": "1.8.2",
+    "polymer-cli": "1.5.7"
   },
   "devDependencies": {},
   "scripts": {
-    "prodMode": "bower install && polymer build",
-    "devMode": "bower install"
+    "prodMode": "bower install && polymer build"
   },
   "author": "",
   "license": "Apache-2.0"
