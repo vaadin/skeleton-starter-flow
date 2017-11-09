@@ -21,23 +21,10 @@
         <vaadin.project.version>10.0.0-alpha6</vaadin.project.version>
         <flow.project.version>1.0.0.alpha10</flow.project.version>
         <servlet.api.version>3.1.0</servlet.api.version>
-        <selenium.server.version>3.4.0</selenium.server.version>
 
         <!-- Plugins -->
-        <frontend.maven.plugin.version>1.5</frontend.maven.plugin.version>
         <jetty.version>9.3.7.v20160115</jetty.version>
-        <maven.clean.plugin.version>3.0.0</maven.clean.plugin.version>
         <maven.war.plugin.version>3.1.0</maven.war.plugin.version>
-
-        <!-- Frontend -->
-        <node.version>v7.10.1</node.version>
-        <npm.version>5.3.0</npm.version>
-
-        <frontend.working.directory>
-            ${project.basedir}/src/main/webapp/frontend
-        </frontend.working.directory>
-        <jetty.extra.resource.base>${project.basedir}/src/main/webapp/
-        </jetty.extra.resource.base>
     </properties>
 
     <repositories>
@@ -56,6 +43,13 @@
             <url>https://dl.bintray.com/webjars/maven</url>
         </repository>
     </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>flow-internal-release</id>
+            <url>https://repo.vaadin.com/nexus/content/repositories/flow</url>
+        </pluginRepository>
+    </pluginRepositories>
 
     <dependencyManagement>
         <dependencies>
@@ -88,38 +82,15 @@
             <artifactId>flow-components</artifactId>
             <version>${flow.project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>flow-data</artifactId>
+            <version>${flow.project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>${maven.clean.plugin.version}</version>
-                <configuration>
-                    <filesets>
-                        <fileset>
-                            <directory>
-                                ${frontend.working.directory}/bower_components
-                            </directory>
-                        </fileset>
-                        <fileset>
-                            <directory>${frontend.working.directory}/build
-                            </directory>
-                        </fileset>
-                        <fileset>
-                            <directory>${frontend.working.directory}/node
-                            </directory>
-                        </fileset>
-                        <fileset>
-                            <directory>
-                                ${frontend.working.directory}/node_modules
-                            </directory>
-                        </fileset>
-                    </filesets>
-                </configuration>
-            </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -133,9 +104,6 @@
                             </Implementation-Version>
                         </manifestEntries>
                     </archive>
-                    <warSourceExcludes>
-                        **/node_modules/,**/node/,**/build/,**/etc/
-                    </warSourceExcludes>
                 </configuration>
             </plugin>
 
@@ -143,16 +111,6 @@
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>${jetty.version}</version>
-                <configuration>
-                    <webAppConfig>
-                        <containerIncludeJarPattern>^$
-                        </containerIncludeJarPattern>
-                        <resourceBases>
-                            <resourceBase>${jetty.extra.resource.base}
-                            </resourceBase>
-                        </resourceBases>
-                    </webAppConfig>
-                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -167,8 +125,7 @@
             </activation>
 
             <properties>
-                <jetty.extra.resource.base>${frontend.working.directory}/build
-                </jetty.extra.resource.base>
+                <transpilation.output>${project.build.directory}/build</transpilation.output>
             </properties>
 
             <dependencies>
@@ -182,30 +139,17 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>com.github.eirslett</groupId>
-                        <artifactId>frontend-maven-plugin</artifactId>
-                        <version>${frontend.maven.plugin.version}</version>
-                        <configuration>
-                            <nodeVersion>${node.version}</nodeVersion>
-                            <npmVersion>${npm.version}</npmVersion>
-                            <workingDirectory>${frontend.working.directory}
-                            </workingDirectory>
-                        </configuration>
+                        <groupId>com.vaadin</groupId>
+                        <artifactId>flow-maven-plugin</artifactId>
+                        <version>0.0.3</version>
                         <executions>
                             <execution>
-                                <id>install-node-and-npm</id>
                                 <goals>
-                                    <goal>install-node-and-npm</goal>
-                                    <goal>npm</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>npm run</id>
-                                <goals>
-                                    <goal>npm</goal>
+                                    <goal>copy-production-files</goal>
+                                    <goal>transpile-production-files</goal>
                                 </goals>
                                 <configuration>
-                                    <arguments>run prodMode</arguments>
+                                    <transpileOutputDirectory>${transpilation.output}</transpileOutputDirectory>
                                 </configuration>
                             </execution>
                         </executions>
@@ -216,16 +160,32 @@
                         <artifactId>maven-war-plugin</artifactId>
                         <version>${maven.war.plugin.version}</version>
                         <configuration>
+                            <archive>
+                                <manifestEntries>
+                                    <Implementation-Title>${project.name}
+                                    </Implementation-Title>
+                                    <Implementation-Version>${project.version}
+                                    </Implementation-Version>
+                                </manifestEntries>
+                            </archive>
                             <webResources>
                                 <resource>
-                                    <directory>
-                                        ${frontend.working.directory}/build
-                                    </directory>
+                                    <directory>${transpilation.output}</directory>
                                 </resource>
                             </webResources>
-                            <warSourceExcludes>
-                                **/frontend/bower_components/,**/node_modules/,**/node/,**/build/,**/etc/
-                            </warSourceExcludes>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.eclipse.jetty</groupId>
+                        <artifactId>jetty-maven-plugin</artifactId>
+                        <version>${jetty.version}</version>
+                        <configuration>
+                            <webAppConfig>
+                                <resourceBases>
+                                    <resourceBase>${transpilation.output}</resourceBase>
+                                </resourceBases>
+                            </webAppConfig>
                         </configuration>
                     </plugin>
                 </plugins>

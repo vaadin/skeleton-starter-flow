@@ -1,9 +1,4 @@
 /target/
-bower_components/
-node/
-node_modules/
-build/
-etc/
 
 # IDEA
 .idea/
