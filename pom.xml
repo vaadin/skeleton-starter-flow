@@ -44,15 +44,15 @@
         </repository>
 
         <repository>
-            <id>flow</id>
+            <id>vaadin-prereleases</id>
             <url>https://maven.vaadin.com/vaadin-prereleases</url>
         </repository>
     </repositories>
 
     <pluginRepositories>
         <pluginRepository>
-            <id>flow-internal-release</id>
-            <url>https://maven.vaadin.com/vaadin-prerelease</url>
+            <id>vaadin-prereleases</id>
+            <url>https://maven.vaadin.com/vaadin-prereleases</url>
         </pluginRepository>
     </pluginRepositories>
 
@@ -80,22 +80,6 @@
             <artifactId>javax.servlet-api</artifactId>
             <version>${servlet.api.version}</version>
             <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-button-flow</artifactId>
-            <version>1.0.0.alpha2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-ordered-layout-flow</artifactId>
-            <version>1.0.0.alpha2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>flow-data</artifactId>
-            <version>${flow.project.version}</version>
         </dependency>
     </dependencies>
 
