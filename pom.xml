@@ -75,6 +75,12 @@
             <version>${vaadin.project.version}</version>
         </dependency>
 
+        <!-- Add valo theme to use in styles.html -->
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>vaadin-valo-theme</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -135,7 +141,7 @@
                     <plugin>
                         <groupId>com.vaadin</groupId>
                         <artifactId>flow-maven-plugin</artifactId>
-                        <version>0.0.3</version>
+                        <version>0.0.4</version>
                         <executions>
                             <execution>
                                 <goals>
