@@ -75,6 +75,7 @@
             <version>${vaadin.project.version}</version>
         </dependency>
 
+        <!-- Add valo theme to use in styles.html -->
         <dependency>
             <groupId>org.webjars.bower</groupId>
             <artifactId>vaadin-valo-theme</artifactId>
