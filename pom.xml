@@ -6,7 +6,7 @@
     <groupId>com.example</groupId>
     <artifactId>skeleton</artifactId>
     <name>Skeleton Starter for Vaadin Flow</name>
-    <version>1.0.0.alpha10</version>
+    <version>1.0.0.alpha12</version>
     <packaging>war</packaging>
 
     <properties>
@@ -19,7 +19,7 @@
 
         <!-- Dependencies -->
         <vaadin.project.version>10.0.0.alpha8</vaadin.project.version>
-        <flow.project.version>1.0.0.alpha11</flow.project.version>
+        <flow.project.version>1.0.0.alpha12</flow.project.version>
         <servlet.api.version>3.1.0</servlet.api.version>
 
         <!-- Plugins -->
