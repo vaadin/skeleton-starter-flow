@@ -30,7 +30,7 @@ public class MainView extends VerticalLayout {
     public MainView() {
         ExampleTemplate template = new ExampleTemplate();
 
-        Button button =  new Button("Click me", event -> template.setValue("Clicked!"));
+        Button button = new Button("Click me", event -> template.setValue("Clicked!"));
 
         add(button, template);
     }
