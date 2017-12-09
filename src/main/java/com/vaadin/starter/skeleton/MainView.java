@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.vaadin.flow.demo.helloworld;
+package com.vaadin.starter.skeleton;
 
 import com.vaadin.router.Route;
 import com.vaadin.ui.button.Button;

@@ -13,9 +13,9 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.vaadin.flow.demo.helloworld;
+package com.vaadin.starter.skeleton;
 
-import com.vaadin.flow.demo.helloworld.ExampleTemplate.ExampleModel;
+import com.vaadin.starter.skeleton.ExampleTemplate.ExampleModel;
 import com.vaadin.flow.model.TemplateModel;
 import com.vaadin.ui.Tag;
 import com.vaadin.ui.common.HtmlImport;
