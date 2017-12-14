@@ -15,10 +15,10 @@
  */
 package com.vaadin.starter.skeleton;
 
-import com.vaadin.server.VaadinServlet;
-import com.vaadin.server.VaadinServletConfiguration;
-
 import javax.servlet.annotation.WebServlet;
+
+import com.vaadin.flow.server.VaadinServlet;
+import com.vaadin.flow.server.VaadinServletConfiguration;
 
 /**
  * The main servlet for the application.
