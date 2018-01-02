@@ -15,10 +15,10 @@
  */
 package com.vaadin.starter.skeleton;
 
-import com.vaadin.router.Route;
-import com.vaadin.ui.button.Button;
-import com.vaadin.ui.common.HtmlImport;
-import com.vaadin.ui.layout.VerticalLayout;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.HtmlImport;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.Route;
 
 /**
  * The main view contains a button and a template element.
