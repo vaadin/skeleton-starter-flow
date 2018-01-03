@@ -17,12 +17,12 @@ package com.vaadin.starter.skeleton;
 
 import java.util.List;
 
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Label;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 
 @Route("")
-public class MainView extends VerticalLayout {
+public class MainView extends Div {
 
     // Dummy data for the Grid:
     List<Item> items = ItemGenerator.generateItems();
