@@ -15,24 +15,20 @@
  */
 package com.vaadin.starter.skeleton;
 
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.dependency.HtmlImport;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import java.util.List;
+
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.router.Route;
 
-/**
- * The main view contains a button and a template element.
- */
-@HtmlImport("styles.html")
 @Route("")
-public class MainView extends VerticalLayout {
+public class MainView extends Div {
+
+    // Dummy data for the Grid:
+    List<Item> items = ItemGenerator.generateItems();
 
     public MainView() {
-        ExampleTemplate template = new ExampleTemplate();
-
-        Button button = new Button("Click me", event -> template.setValue("Clicked!"));
-
-        add(button, template);
+        items.forEach(item -> add(new Label(item.getName())));
     }
 
 }
