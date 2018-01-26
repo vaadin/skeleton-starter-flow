@@ -28,11 +28,6 @@
 
     <repositories>
         <repository>
-            <id>vaadin-platform</id>
-            <url>https://repo.vaadin.com/nexus/content/repositories/flow</url>
-        </repository>
-
-        <repository>
             <id>vaadin-addons</id>
             <url>http://maven.vaadin.com/vaadin-addons</url>
         </repository>
