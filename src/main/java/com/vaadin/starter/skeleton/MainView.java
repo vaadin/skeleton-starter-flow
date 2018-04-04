@@ -11,7 +11,6 @@ import com.vaadin.flow.theme.lumo.Lumo;
 /**
  * The main view contains a button and a template element.
  */
-@BodySize(height = "100vh", width = "100vw")
 @HtmlImport("styles/shared-styles.html")
 @Route("")
 @Theme(Lumo.class)
