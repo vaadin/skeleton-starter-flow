@@ -67,8 +67,7 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.4.11.v20180605</version>
                 <configuration>
-                    <reload>manual</reload>
-                    <scanIntervalSeconds>5</scanIntervalSeconds>
+                    <scanIntervalSeconds>1</scanIntervalSeconds>
                 </configuration>
             </plugin>
         </plugins>
