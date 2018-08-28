@@ -12,4 +12,9 @@ To access it directly from github, clone the repository and import the project t
 
 Run using `mvn jetty:run` and open [http://localhost:8080](http://localhost:8080) in browser.
 
-For a full Vaadin Flow application example, there is the Beverage Buddy App Starter for Flow avaiable also from [vaadin.com/start](https://vaadin.com/start) page.
+For a full Vaadin Flow application example, there is the Beverage Buddy App Starter for Flow available also from [vaadin.com/start](https://vaadin.com/start) page.
+
+Branching information:
+* `master` the latest version of the starter, using latest platform snapshot
+* `V10` the version for Vaadin 10
+* `V11` the version for Vaadin 11
