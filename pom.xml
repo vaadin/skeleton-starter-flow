@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
-        <vaadin.version>12.0.2</vaadin.version>
+        <vaadin.version>12.0.3</vaadin.version>
     </properties>
 
     <repositories>
