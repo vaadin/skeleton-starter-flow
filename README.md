@@ -19,3 +19,4 @@ Branching information:
 * `V10` the version for Vaadin 10
 * `V11` the version for Vaadin 11
 * `V12` the version for Vaadin 12
+* `V13` the version for Vaadin 13
