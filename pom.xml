@@ -15,15 +15,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
-        <vaadin.version>13.0-SNAPSHOT</vaadin.version>
+        <vaadin.version>13.0.0.beta1</vaadin.version>
     </properties>
 
     <repositories>
-        <repository>
-            <id>central</id>
-            <url>https://repo1.maven.org/maven2/</url>
-            <snapshots><enabled>false</enabled></snapshots>
-        </repository>
         <!-- Repository used by many Vaadin add-ons -->
         <repository>
              <id>Vaadin Directory</id>
@@ -33,32 +28,15 @@
         <repository>
             <id>vaadin-prereleases</id>
             <url>https://maven.vaadin.com/vaadin-prereleases</url>
-            <snapshots><enabled>false</enabled></snapshots>
-        </repository>
-        <!-- Repository needed for the snapshot versions of Vaadin -->
-        <repository>
-            <id>vaadin-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
-            <releases><enabled>false</enabled></releases>
         </repository>
     </repositories>
 
     <pluginRepositories>
-        <pluginRepository>
-            <id>central</id>
-            <url>https://repo1.maven.org/maven2/</url>
-            <snapshots><enabled>false</enabled></snapshots>
-        </pluginRepository>
         <!-- Repository needed for prerelease versions of Vaadin -->
         <pluginRepository>
             <id>vaadin-prereleases</id>
             <url>https://maven.vaadin.com/vaadin-prereleases</url>
             <snapshots><enabled>false</enabled></snapshots>
-        </pluginRepository>
-        <pluginRepository>
-            <id>vaadin-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
-            <releases><enabled>false</enabled></releases>
         </pluginRepository>
     </pluginRepositories>
 
