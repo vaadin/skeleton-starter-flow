@@ -39,6 +39,12 @@
     </repositories>
 
     <pluginRepositories>
+        <!-- Maven central - reduces first-time build time -->
+        <pluginRepository>
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2/</url>
+            <snapshots><enabled>false</enabled></snapshots>
+        </pluginRepository>
         <!-- Repository needed for prerelease versions of Vaadin -->
         <pluginRepository>
             <id>vaadin-prereleases</id>
