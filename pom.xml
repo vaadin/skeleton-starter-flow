@@ -19,6 +19,13 @@
     </properties>
 
     <repositories>
+        <!-- Maven central - reduces first-time build time -->
+        <repository>
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2/</url>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+
         <!-- Repository used by many Vaadin add-ons -->
         <repository>
              <id>Vaadin Directory</id>
