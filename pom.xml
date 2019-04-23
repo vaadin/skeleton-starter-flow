@@ -147,7 +147,7 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>update-frontend</goal>
+                            <goal>build-frontend</goal>
                         </goals>
                     </execution>
                 </executions>
