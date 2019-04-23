@@ -147,6 +147,7 @@
                 <executions>
                     <execution>
                         <goals>
+                            <goal>validate</goal>
                             <goal>build-frontend</goal>
                         </goals>
                     </execution>
@@ -162,7 +163,6 @@
                         <fileset>
                             <directory>${project.basedir}</directory>
                             <includes>
-                                <include>frontend/main.js</include>
                                 <include>package.json</include>
                                 <include>webpack.config.js</include>
                             </includes>
