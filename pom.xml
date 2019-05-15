@@ -97,6 +97,7 @@
     </dependencies>
 
     <build>
+        <defaultGoal>jetty:run</defaultGoal>
         <plugins>
             <!-- Jetty plugin for easy testing without a server -->
             <plugin>
