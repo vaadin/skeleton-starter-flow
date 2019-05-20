@@ -77,7 +77,7 @@
     <dependencies>
         <dependency>
             <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-core</artifactId>
+            <artifactId>vaadin</artifactId>
         </dependency>
 
         <!-- Added to provide logging output as Flow uses -->
