@@ -14,3 +14,4 @@
 
 # The following files are generated/updated by vaadin-maven-plugin
 node_modules/
+package-lock.json
