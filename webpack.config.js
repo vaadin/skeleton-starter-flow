@@ -14,7 +14,7 @@ const baseDir = path.resolve(__dirname);
 const frontendFolder = `${baseDir}/frontend`;
 
 ////////////////////////////////////////
-// IMPORTANT: these two constants are updated when the maven plugin 'validate' goal is run.
+// IMPORTANT: these two constants are updated when the maven plugin 'prepare-frontend' goal is run.
 fileNameOfTheFlowGeneratedMainEntryPoint = require('path').resolve(__dirname, 'target/frontend/generated-flow-imports.js');
 mavenOutputFolderForFlowBundledFiles = require('path').resolve(__dirname, 'target/project-base-2.0-SNAPSHOT');
 ////////////////////////////////////////
