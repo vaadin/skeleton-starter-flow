@@ -1,6 +1,5 @@
 package com.vaadin.starter.skeleton;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -14,7 +13,7 @@ import com.vaadin.testbench.TestBench;
 import com.vaadin.testbench.parallel.ParallelTest;
 
 /**
- * Base class for ITs
+ * Base class for TestBench IntegrationTests on chrome.
  * <p>
  * The tests use Chrome driver (see pom.xml for integration-tests profile) to
  * run integration tests on a headless Chrome. If a property {@code test.use
