@@ -10,8 +10,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.release>8</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
@@ -177,6 +176,9 @@
             <activation>
                 <jdk>11</jdk>
             </activation>
+            <properties>
+                <maven.compiler.release>11</maven.compiler.release>
+            </properties>
             <build>
                 <pluginManagement>
                     <plugins>
