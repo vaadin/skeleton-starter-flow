@@ -119,19 +119,6 @@
                 <version>9.4.15.v20190215</version>
                 <configuration>
                     <scanIntervalSeconds>5</scanIntervalSeconds>
-                    <stopPort>8081</stopPort>
-                    <stopWait>5</stopWait>
-                    <stopKey>${project.artifactId}</stopKey>
-                    <systemProperties>
-                        <systemProperty>
-                            <name>vaadin.devmode.webpack.options</name>
-                            <value>--debug</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>project.basedir</name>
-                            <value>${project.basedir}</value>
-                        </systemProperty>
-                    </systemProperties>
                     <!-- Use war output directory to get the webpack files -->
                     <webAppConfig>
                         <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
@@ -260,6 +247,9 @@
                         <version>9.4.15.v20190215</version>
                         <configuration>
                             <scanIntervalSeconds>0</scanIntervalSeconds>
+                            <stopPort>8081</stopPort>
+                            <stopWait>5</stopWait>
+                            <stopKey>${project.artifactId}</stopKey>
                         </configuration>
                         <executions>
                             <execution>
