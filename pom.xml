@@ -123,9 +123,6 @@
                     <!-- Use war output directory to get the webpack files -->
                     <webAppConfig>
                         <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
-                        <resourceBases>
-                            <resourceBase>${project.build.directory}/${project.build.finalName}</resourceBase>
-                        </resourceBases>
                     </webAppConfig>
                 </configuration>
             </plugin>
