@@ -11,8 +11,8 @@ There is also a [getting started tutorial](https://vaadin.com/learn) based on th
 To access it directly from github, clone the repository and import the project to the IDE of your choice as a Maven project. You need to have Java 8 installed.
 
 Run using `mvn jetty:run` and open [http://localhost:8080](http://localhost:8080) in browser.
-If you want to run your app locally in the production mode, use 
-`mvn jetty:run-war -Pproduction`.
+If you want to run your app locally in the production mode, run `mvn package -Pproduction` before 
+`mvn jetty:run -Pproduction`.
 
 For a full Vaadin Flow application example, there is the Beverage Buddy App Starter for Flow available also from [vaadin.com/start](https://vaadin.com/start) page.
 
