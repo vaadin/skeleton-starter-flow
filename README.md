@@ -5,19 +5,19 @@
 This project can be used as a starting point to create your own Vaadin Flow application.
 It has the necessary dependencies and files to help you get started.
 
-The best way to use it by via [vaadin.com/start](https://vaadin.com/start) - you can get only the necessary parts and choose the package naming you want to use.
+The best way to use it is via [vaadin.com/start](https://vaadin.com/start) - you can get only the necessary parts and choose the package naming you want to use.
 There is also a [getting started tutorial](https://vaadin.com/learn) based on this project.
 
-To access it directly from github, clone the repository and import the project to the IDE of your choice as a Maven project. You need to have Java 8 installed.
+To access it directly from github, clone the repository and import the project to the IDE of your choice as a Maven project. You need to have Java 8 or 11 installed.
 
-Run using `mvn jetty:run` and open [http://localhost:8080](http://localhost:8080) in browser.
+Run using `mvn jetty:run` and open [http://localhost:8080](http://localhost:8080) in the browser.
 If you want to run your app locally in the production mode, run `mvn package -Pproduction` before 
 `mvn jetty:run -Pproduction`.
 
-For a full Vaadin Flow application example, there is the Beverage Buddy App Starter for Flow available also from [vaadin.com/start](https://vaadin.com/start) page.
+For a full Vaadin Flow application example, there are more choices available also from [vaadin.com/start](https://vaadin.com/start) page.
 
 Branching information:
-* `master` the latest version of the starter, using latest platform snapshot
+* `master` the latest version of the starter, using the latest platform version
 * `v10` the version for Vaadin 10
 * `v11` the version for Vaadin 11
 * `v12` the version for Vaadin 12
