@@ -170,7 +170,6 @@
                     <execution>
                         <goals>
                             <goal>prepare-frontend</goal>
-                            <goal>build-frontend</goal>
                         </goals>
                     </execution>
                 </executions>
