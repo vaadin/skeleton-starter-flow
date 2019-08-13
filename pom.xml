@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>project-base</artifactId>
-    <name>Project base for Vaadin Flow</name>
+    <name>Project base for Vaadin</name>
     <version>2.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -111,7 +111,7 @@
             </exclusions>
         </dependency>
 
-        <!-- Added to provide logging output as Flow uses -->
+        <!-- Added to provide logging output as Vaadin uses -->
         <!-- the unbound SLF4J no-operation (NOP) logger implementation -->
         <dependency>
             <groupId>org.slf4j</groupId>
