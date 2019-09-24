@@ -9,7 +9,7 @@ before_install:
   - sed -i "s/activeByDefault>true</activeByDefault>false</g"  ~/.m2/settings.xml
 
 script:
-  - mvn -B -e -V clean verify -Pintegration-tests
+  - mvn -B -e -V clean verify -Pintegration-tests -Dvaadin.testbench.developer.license=$TESTBENCH_LICENSE
 
 # Cache requires a master build
 branches:
