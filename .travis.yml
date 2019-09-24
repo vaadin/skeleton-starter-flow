@@ -8,8 +8,7 @@ before_install:
   # Disable all Travis default repositories
   - sed -i "s/activeByDefault>true</activeByDefault>false</g"  ~/.m2/settings.xml
 
-script:
-  - mvn -B -e -V clean verify -Pintegration-tests -Dvaadin.testbench.developer.license=$TESTBENCH_LICENSE
+script:"./.travis.script.sh"
 
 # Cache requires a master build
 branches:
