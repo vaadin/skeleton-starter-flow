@@ -80,7 +80,7 @@ module.exports = {
     rules: [
       { // Files that Babel has to transpile
         test: /\.js$/,
-        use: [BabelMultiTargetPlugin.loader()]
+        use: 'babel-loader'
       },
       {
         test: /\.css$/i,
@@ -93,31 +93,6 @@ module.exports = {
     maxAssetSize: 2097152 // 2MB
   },
   plugins: [
-    // Transpile with babel, and produce different bundles per browser
-    new BabelMultiTargetPlugin({
-      babel: {
-        presetOptions: {
-          useBuiltIns: false // polyfills are provided from webcomponents-loader.js
-        }
-      },
-      targets: {
-        'es6': { // Evergreen browsers
-          browsers: [
-            // It guarantees that babel outputs pure es6 in bundle and in stats.json
-            // In the case of browsers no supporting certain feature it will be
-            // covered by the webcomponents-loader.js
-            'last 1 Chrome major versions'
-          ],
-        },
-        'es5': { // IE11
-          browsers: [
-            'ie 11'
-          ],
-          tagAssetsWithKey: true, // append a suffix to the file name
-        }
-      }
-    }),
-
     // Generates the stats file for flow `@Id` binding.
     function (compiler) {
       compiler.hooks.afterEmit.tapAsync("FlowIdPlugin", (compilation, done) => {
