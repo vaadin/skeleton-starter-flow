@@ -46,15 +46,15 @@ public class MainViewIT extends AbstractViewTest {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         Object mode = js.executeScript("return Vaadin.developmentMode");
 
-        String item = (String) js.executeScript(String.format(
-                "return window.localStorage.getItem('%s');", "vaadin.statistics.basket"));
+        String item = (String) js.executeScript(
+                "return window.localStorage.getItem('vaadin.statistics.basket');");
 
-        if(mode.equals(Boolean.TRUE)){
-            Assert.assertTrue("Under development mode, the checked info are not found",
+        if(Boolean.TRUE.equals(mode)){
+            Assert.assertTrue("Under development mode, the checked usage statistics are not found",
                     item.contains("flow") && item.contains("java") && item.contains("vaadin-button"));
         } else {
             Assert.assertTrue("Under production mode, the usage statistics info should be empty",
-                    (item == null || item.length()==0));
+                    (item == null || item.length() == 0));
         }
 
     }
