@@ -9,7 +9,7 @@ before_install:
   - sed -i "s/activeByDefault>true</activeByDefault>false</g"  ~/.m2/settings.xml
 
 script:
-  - mvn -B -e -V clean verify
+  - mvn -B -e -V -Pintegration-tests clean verify
 
 # Cache requires a master build
 branches:
