@@ -5,7 +5,8 @@
     "@polymer/polymer": "3.2.0",
     "@webcomponents/webcomponentsjs": "^2.2.10",
     "@vaadin/flow-deps": "./target/frontend",
-    "@vaadin/flow-frontend": "./target/flow-frontend"
+    "@vaadin/flow-frontend": "./target/flow-frontend",
+    "@vaadin/router": "^1.4.1"
   },
   "devDependencies": {
     "webpack": "4.30.0",
@@ -21,5 +22,5 @@
     "typescript": "3.5.3",
     "awesome-typescript-loader": "5.2.1"
   },
-  "vaadinAppPackageHash": "f6910a4058f1906f2b945269534965d643311cb97fab936a6e6fb09a42a9d899"
+  "vaadinAppPackageHash": "998e5cbe4b84af7bb9f0fcef26c88ee41ccdf3163456a0699a7d7f36c6072e0a"
 }
