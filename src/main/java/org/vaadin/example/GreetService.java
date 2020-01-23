@@ -1,4 +1,4 @@
-package com.vaadin.starter.skeleton;
+package org.vaadin.example;
 
 public class GreetService {
 
