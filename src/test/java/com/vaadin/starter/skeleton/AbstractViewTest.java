@@ -24,7 +24,7 @@ import com.vaadin.testbench.parallel.ParallelTest;
  * as a base class for you own TestBench tests.
  * <p>
  * To learn more about TestBench, visit
- * <a href="https://vaadin.com/docs/v10/testbench/testbench-overview.html">Vaadin TestBench</a>.
+ * <a href="https://vaadin.com/docs/testbench/testbench-overview.html">Vaadin TestBench</a>.
  */
 public abstract class AbstractViewTest extends ParallelTest {
     private static final int SERVER_PORT = 8080;
