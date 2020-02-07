@@ -11,7 +11,8 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 
 /**
- * The main view contains a button and a click listener.
+ * The main view contains a text field for getting the user name and a button
+ * that shows a greeting message in a notification.
  */
 @Route("")
 @PWA(name = "Project Base for Vaadin", shortName = "Project Base")
