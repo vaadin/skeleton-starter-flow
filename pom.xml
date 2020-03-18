@@ -155,7 +155,7 @@
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.4.19.v20190610</version>
+                <version>9.4.27.v20200227</version>
                 <configuration>
                     <!-- If using IntelliJ IDEA with autocompilation, this
                     might cause lots of unnecessary compilations in the
@@ -229,7 +229,7 @@
                     <plugin>
                         <groupId>org.eclipse.jetty</groupId>
                         <artifactId>jetty-maven-plugin</artifactId>
-                        <version>9.4.15.v20190215</version>
+                        <version>9.4.27.v20200227</version>
                         <configuration>
                             <scanIntervalSeconds>0</scanIntervalSeconds>
                             <stopPort>8081</stopPort>
