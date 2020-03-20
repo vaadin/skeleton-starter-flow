@@ -18,6 +18,7 @@
 
         <vaadin.version>15.0.2</vaadin.version>
         <drivers.downloader.phase>pre-integration-test</drivers.downloader.phase>
+        <jetty.version>9.4.27.v20200227</jetty.version>
     </properties>
 
     <repositories>
@@ -85,33 +86,6 @@
             <groupId>com.vaadin</groupId>
             <!-- Replace artifactId with vaadin-core to use only free components -->
             <artifactId>vaadin</artifactId>
-            <exclusions>
-                <!-- Webjars are only needed when running in Vaadin 13 compatibility mode -->
-                <exclusion>
-                    <groupId>com.vaadin.webjar</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.webjars.bowergithub.insites</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.webjars.bowergithub.polymer</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.webjars.bowergithub.polymerelements</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.webjars.bowergithub.vaadin</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.webjars.bowergithub.webcomponents</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <!-- Added to provide logging output as Vaadin uses -->
@@ -155,7 +129,7 @@
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.4.19.v20190610</version>
+                <version>${jetty.version}</version>
                 <configuration>
                     <!-- If using IntelliJ IDEA with autocompilation, this
                     might cause lots of unnecessary compilations in the
@@ -229,7 +203,7 @@
                     <plugin>
                         <groupId>org.eclipse.jetty</groupId>
                         <artifactId>jetty-maven-plugin</artifactId>
-                        <version>9.4.15.v20190215</version>
+                        <version>${jetty.version}</version>
                         <configuration>
                             <scanIntervalSeconds>0</scanIntervalSeconds>
                             <stopPort>8081</stopPort>
