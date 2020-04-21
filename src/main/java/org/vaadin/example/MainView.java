@@ -14,7 +14,7 @@ import com.vaadin.flow.server.PWA;
  * The main view contains a button and a click listener.
  */
 @Route("")
-@PWA(name = "Project Base for Vaadin", shortName = "Project Base")
+@PWA(name = "Project Base for Vaadin", shortName = "Project Base", enableInstallPrompt = false)
 @CssImport("./styles/shared-styles.css")
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
 public class MainView extends VerticalLayout {
