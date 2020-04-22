@@ -16,7 +16,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
-        <vaadin.version>16.0-SNAPSHOT</vaadin.version>
+        <vaadin.version>15.0.4</vaadin.version>
         <drivers.downloader.phase>pre-integration-test</drivers.downloader.phase>
         <jetty.version>9.4.27.v20200227</jetty.version>
     </properties>
@@ -77,6 +77,13 @@
         <dependencies>
             <dependency>
                 <groupId>com.vaadin</groupId>
+                <artifactId>flow-bom</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>3.2.0.alpha2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-bom</artifactId>
                 <type>pom</type>
                 <scope>import</scope>
@@ -110,17 +117,6 @@
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-testbench</artifactId>
             <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>flow-server</artifactId>
-            <version>3.2-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>flow-client</artifactId>
-            <version>3.2-SNAPSHOT</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
