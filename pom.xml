@@ -19,7 +19,7 @@
         <vaadin.version>14.1.27</vaadin.version>
 
         <drivers.downloader.phase>pre-integration-test</drivers.downloader.phase>
-        <jetty.version>9.4.27.v20200227</jetty.version>
+        <jetty.version>9.4.28.v20200408</jetty.version>
     </properties>
 
     <repositories>
@@ -135,11 +135,7 @@
                 </configuration>
             </plugin>
 
-            <!--
-                Take care of synchronizing java dependencies and imports in
-                package.json and main.js files.
-                It also creates webpack.config.js if not exists yet.
-            -->
+
             <plugin>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-maven-plugin</artifactId>
