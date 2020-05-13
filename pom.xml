@@ -76,9 +76,7 @@
                 <artifactId>flow-bom</artifactId>
                 <type>pom</type>
                 <scope>import</scope>
-                <version>3.2-SNAPSHOT</version>
-                <!-- TODO -->
-                <!--version>3.2.0.alpha3</version-->
+                <version>3.2.0.alpha3</version>
             </dependency>
             <dependency>
                 <groupId>com.vaadin</groupId>
