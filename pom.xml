@@ -81,7 +81,7 @@
             <dependency>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-charts-flow</artifactId>
-                <version>9.0-SNAPSHOT</version>
+                <version>9.0.0.alpha2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
