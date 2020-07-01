@@ -16,7 +16,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
-        <vaadin.version>14.2.2</vaadin.version>
+        <vaadin.version>14.2.3</vaadin.version>
         <jetty.version>9.4.28.v20200408</jetty.version>
     </properties>
 
