@@ -40,8 +40,9 @@
             </snapshots>
         </repository>
     </repositories>
-         
+     
     <pluginRepositories>
+         <!-- Maven Central repository requires https:// to access -->
         <pluginRepository>
             <id>central</id>
             <url>https://repo.maven.apache.org/maven2</url>
