@@ -50,7 +50,6 @@
       "lit-element": "2.3.1"
     },
     "devDependencies": {
-      "webpack-babel-multi-target-plugin": "2.3.3",
       "copy-webpack-plugin": "5.1.1",
       "compression-webpack-plugin": "3.1.0",
       "raw-loader": "4.0.0",
@@ -62,15 +61,17 @@
       "typescript": "3.8.3",
       "webpack-merge": "4.2.2",
       "webpack-dev-server": "3.10.3",
-      "terser": "4.6.7",
       "progress-webpack-plugin": "0.0.24",
       "lit-element": "2.3.1",
       "chokidar": "^3.4.0",
       "validator": "12.0.0",
       "lit-html": "1.2.1",
-      "@types/validator": "10.11.3"
+      "@types/validator": "10.11.3",
+      "css-loader": "4.2.1",
+      "lit-css-loader": "0.0.3",
+      "extract-loader": "5.1.0"
     },
-    "hash": "bbdc56ce578e300a2695c8d73ced35aeb7700da80529406b67f2c9feeef490fa"
+    "hash": "7d32f46f70b8e758c9f5c22e2475adf016710a0773e36225d2de1c695d3801fd"
   },
   "dependencies": {
     "@polymer/iron-icon": "3.0.1",
@@ -121,7 +122,6 @@
     "@vaadin/form": "./target/flow-frontend/form"
   },
   "devDependencies": {
-    "webpack-babel-multi-target-plugin": "2.3.3",
     "copy-webpack-plugin": "5.1.1",
     "compression-webpack-plugin": "3.1.0",
     "raw-loader": "4.0.0",
@@ -133,12 +133,14 @@
     "typescript": "3.8.3",
     "webpack-merge": "4.2.2",
     "webpack-dev-server": "3.10.3",
-    "terser": "4.6.7",
     "progress-webpack-plugin": "0.0.24",
     "lit-element": "2.3.1",
     "chokidar": "^3.4.0",
     "validator": "12.0.0",
     "lit-html": "1.2.1",
-    "@types/validator": "10.11.3"
+    "@types/validator": "10.11.3",
+    "css-loader": "4.2.1",
+    "lit-css-loader": "0.0.3",
+    "extract-loader": "5.1.0"
   }
 }
