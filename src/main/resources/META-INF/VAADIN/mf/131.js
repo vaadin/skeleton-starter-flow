@@ -1,0 +1,1 @@
+(self.webpackChunkcomponents_demo=self.webpackChunkcomponents_demo||[]).push([[131],{131:(e,s,n)=>{"use strict";n.r(s),n.d(s,{DetailsElement:()=>o.P}),n(2016);var o=n(9517)}}]);

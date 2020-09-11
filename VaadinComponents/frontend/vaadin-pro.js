@@ -1,0 +1,9 @@
+import '@vaadin/vaadin-board/vaadin-board-row.js';
+import '@vaadin/vaadin-board/vaadin-board.js';
+import '@vaadin/vaadin-confirm-dialog/theme/lumo/vaadin-confirm-dialog.js';
+import '@vaadin/vaadin-cookie-consent/theme/lumo/vaadin-cookie-consent.js';
+import '@vaadin/vaadin-crud/src/vaadin-crud-edit-column.js';
+import '@vaadin/vaadin-crud/theme/lumo/vaadin-crud.js';
+import '@vaadin/vaadin-grid-pro/theme/lumo/vaadin-grid-pro-edit-column.js';
+import '@vaadin/vaadin-grid-pro/theme/lumo/vaadin-grid-pro.js';
+import '@vaadin/vaadin-rich-text-editor/theme/lumo/vaadin-rich-text-editor.js';

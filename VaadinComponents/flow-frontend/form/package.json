@@ -1,0 +1,7 @@
+{
+  "name": "@vaadin/form",
+  "license": "UNLICENSED",
+  "main": "index",
+  "version": "1.0.0",
+  "sideEffects": false
+}
