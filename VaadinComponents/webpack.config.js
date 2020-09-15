@@ -23,8 +23,10 @@ const getConfig = (mode) => {
   const shared = {
     "lit-html": { singleton: true },
     "@vaadin/vaadin-lumo-styles": {singleton: true},
+    "@polymer/iron-icon": {singleton: true},
+    "@polymer/iron-list": {singleton: true},
     "@polymer/polymer": {singleton: true},
-//    "lit-element": { singleton: true }
+   "lit-element": { singleton: true }
   };
 
   const componentConfigs = {

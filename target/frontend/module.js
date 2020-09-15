@@ -9,11 +9,11 @@ function addCssBlock(block) {
 }
 import $css_0 from 'Frontend/styles/shared-styles.css';
 addCssBlock(`<custom-style><style>${$css_0}</style></custom-style>`);
-import $css_1 from 'Frontend/styles/vaadin-text-field-styles.css';
-addCssBlock(`<dom-module id="flow_css_mod_1" theme-for="vaadin-text-field"><template><style>${$css_1}</style></template></dom-module>`);
+// import $css_1 from 'Frontend/styles/vaadin-text-field-styles.css';
+// addCssBlock(`<dom-module id="flow_css_mod_1" theme-for="vaadin-text-field"><template><style>${$css_1}</style></template></dom-module>`);
 
-import '@polymer/iron-icon/iron-icon.js';
-import '@polymer/iron-list/iron-list.js';
+// import '@polymer/iron-icon/iron-icon.js';
+// import '@polymer/iron-list/iron-list.js';
 import '@vaadin/flow-frontend/comboBoxConnector.js';
 import '@vaadin/flow-frontend/contextMenuConnector.js';
 import '@vaadin/flow-frontend/datepickerConnector.js';

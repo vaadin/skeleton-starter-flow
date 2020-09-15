@@ -162,14 +162,15 @@ module.exports = {
     // Generate compressed bundles when not devMode
     !devMode && new CompressionPlugin(),
     new ModuleFederationPlugin({
-      name: "app",
+      // name: "app",
     remotes: {
         core: "core@./VAADIN/build/core.js",
       },
       shared: {
-        "@polymer/polymer": { singleton:true },
-        "vaadin-lumo-styles": {singleton: true},
-        "dom-element": {singleton:true}
+        "@vaadin/vaadin-lumo-styles": {singleton: true},
+        "@polymer/iron-icon": {singleton: true},
+        "@polymer/iron-list": {singleton: true},
+        "@polymer/polymer": {singleton: true},
       },
     }),
 
