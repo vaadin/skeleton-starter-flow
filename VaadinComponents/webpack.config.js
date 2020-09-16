@@ -46,6 +46,34 @@ const getConfig = (mode) => {
         shared,
       }),
     ]),
+    connectors: merge([
+      parts.page({
+        entry: {
+        },
+        mode,
+      }),
+      parts.federateModule({
+        name: "connectors",
+        filename: "connectors.js",
+        exposes: {
+          "./comboBoxConnector": "./node_modules/@vaadin/flow-frontend/comboBoxConnector.js",
+          "./contextMenuConnector": "./node_modules/@vaadin/flow-frontend/contextMenuConnector.js",
+          "./datepickerConnector": "./node_modules/@vaadin/flow-frontend/datepickerConnector.js",
+          "./dndConnector": "./node_modules/@vaadin/flow-frontend/dndConnector-es6.js",
+          "./flowComponentRenderer": "./node_modules/@vaadin/flow-frontend/flow-component-renderer.js",
+          "./gridConnector": "./node_modules/@vaadin/flow-frontend/gridConnector.js",
+          "./gridProConnector": "./node_modules/@vaadin/flow-frontend/gridProConnector.js",
+          "./ironListConnector": "./node_modules/@vaadin/flow-frontend/ironListConnector.js",
+          "./ironListStyles": "./node_modules/@vaadin/flow-frontend/ironListStyles.js",
+          "./menubarConnector": "./node_modules/@vaadin/flow-frontend/menubarConnector.js",
+          "./selectConnector": "./node_modules/@vaadin/flow-frontend/selectConnector.js",
+          "./timepickerConnector": "./node_modules/@vaadin/flow-frontend/timepickerConnector.js",
+          "./bigDecimalField": "./node_modules/@vaadin/flow-frontend/vaadin-big-decimal-field.js",
+          "./gridFlowSelectionColumn": "./node_modules/@vaadin/flow-frontend/vaadin-grid-flow-selection-column.js",
+        },
+        shared,
+      }),
+    ]),
     core: merge([
       parts.page({
         entry: {
@@ -107,6 +135,20 @@ const getConfig = (mode) => {
           "./vaadin-time-picker": "./node_modules/@vaadin/vaadin-time-picker/vaadin-time-picker",
           "./vaadin-upload-file": "./node_modules/@vaadin/vaadin-upload/src/vaadin-upload-file",
           "./vaadin-upload": "./node_modules/@vaadin/vaadin-upload/vaadin-upload",
+          "./comboBoxConnector": "./node_modules/@vaadin/flow-frontend/comboBoxConnector.js",
+          "./contextMenuConnector": "./node_modules/@vaadin/flow-frontend/contextMenuConnector.js",
+          "./datepickerConnector": "./node_modules/@vaadin/flow-frontend/datepickerConnector.js",
+          "./dndConnector": "./node_modules/@vaadin/flow-frontend/dndConnector-es6.js",
+          "./flowComponentRenderer": "./node_modules/@vaadin/flow-frontend/flow-component-renderer.js",
+          "./gridConnector": "./node_modules/@vaadin/flow-frontend/gridConnector.js",
+          "./gridProConnector": "./node_modules/@vaadin/flow-frontend/gridProConnector.js",
+          "./ironListConnector": "./node_modules/@vaadin/flow-frontend/ironListConnector.js",
+          "./ironListStyles": "./node_modules/@vaadin/flow-frontend/ironListStyles.js",
+          "./menubarConnector": "./node_modules/@vaadin/flow-frontend/menubarConnector.js",
+          "./selectConnector": "./node_modules/@vaadin/flow-frontend/selectConnector.js",
+          "./timepickerConnector": "./node_modules/@vaadin/flow-frontend/timepickerConnector.js",
+          "./bigDecimalField": "./node_modules/@vaadin/flow-frontend/vaadin-big-decimal-field.js",
+          "./gridFlowSelectionColumn": "./node_modules/@vaadin/flow-frontend/vaadin-grid-flow-selection-column.js",
         },
         shared
       }),
