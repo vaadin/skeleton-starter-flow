@@ -1,30 +1,28 @@
-# Skeleton Starter for Vaadin
+# Module Federation prototype branch
 
-This project can be used as a starting point to create your own Vaadin application.
-It has the necessary dependencies and files to help you get started.
+The branch contains the directory VaadinComponents where we can build 
+module federation bundles for components. For the branch the core components
+module has been added to `./src/main/resources/META-INF/VAADIN/build/core.js` +  
+`./src/main/resources/META-INF/VAADIN/mf` the part files in mf have had some editing
+on customElement.define else they are a direct copy on what will be created in the 
+VaadinComponents project.
 
-The best way to use it is via [vaadin.com/start](https://vaadin.com/start) - you can get only the necessary parts and choose the package naming you want to use.
-There is also a [getting started tutorial](https://vaadin.com/tutorials/getting-started-with-flow) based on this project.
+Special edits that need framework support are `target/frontend/module.js` (which stands in for generated-flow-imports), 
+`target/index.ts` (which was not copied from `./frontend/` for webpack) and `MFInitListener`
 
-To access it directly from github, clone the repository and import the project to the IDE of your choice as a Maven project. You need to have Java 8 or 11 installed.
+The `MFInitListener` is a custom request handler for serving the javascript files from `VAADIN/mf` as there
+is something with the webpack publicPath parameter which doesn't translate to the federated module parts loading requests.
 
-Run using `mvn jetty:run` and open [http://localhost:8080](http://localhost:8080) in the browser.
+# Running project
 
-If you want to run your app locally in the production mode, run `mvn jetty:run -Pproduction`.
+Project should start with `mvn jetty:run`
+* currently the Theme is missing from the application for some reason
 
-### Running Integration Tests
+# Resetting project
 
-Integration tests are implemented using [Vaadin TestBench](https://vaadin.com/testbench). The tests take a few minutes to run and are therefore included in a separate Maven profile. We recommend running tests with a production build to minimize the chance of development time toolchains affecting test stability. To run the tests using Google Chrome, execute
+To reset the project execute
+* mvn clean
+* git reset --hard
 
-`mvn verify -Pit,production`
-
-and make sure you have a valid TestBench license installed.
-
-Profile `it` adds the following parameters to run integration tests:
-```sh
--Dwebdriver.chrome.driver=path_to_driver
--Dcom.vaadin.testbench.Parameters.runLocally=chrome
-```
-
-For a full Vaadin application example, there are more choices available also from [vaadin.com/start](https://vaadin.com/start) page.
-
+After this everything will be at the start state.
+(`git pull` should be used if changes have been pushed to branch)
