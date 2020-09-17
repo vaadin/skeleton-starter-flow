@@ -186,8 +186,8 @@ const getConfig = (mode) => {
         name: "app",
         remotes: {
           core: "core@./core.js",
-          gizmo: "gizmo@./gizmo.js",
-//          pro: "pro@./pro.js",
+          
+          pro: "pro@./pro.js",
         },
         shared,
       }),

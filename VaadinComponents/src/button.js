@@ -1,5 +1,6 @@
 import {html, render} from 'lit-html';
 import { VaadinButton, VaadinComboBox, VaadinVerticalLayout, VaadinHorizontalLayout } from "./core-components";
+import { GridPro } from "pro/vaadin-grid-pro";
 
 render(html`
 <vaadin-vertical-layout>

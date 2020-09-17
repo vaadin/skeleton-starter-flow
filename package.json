@@ -125,7 +125,7 @@
     "compression-webpack-plugin": "5.0.1",
     "raw-loader": "4.0.1",
     "webpack-cli": "3.3.12",
-    "webpack": "5.0.0-beta.28",
+    "webpack": "5.0.0-beta.30",
     "html-webpack-plugin": "4.3.0",
     "script-ext-html-webpack-plugin": "2.1.4",
     "awesome-typescript-loader": "5.2.1",

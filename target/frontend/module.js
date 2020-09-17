@@ -69,3 +69,11 @@ import VaadinTimePicker from "core/vaadin-time-picker";
 import VaadinUploadFile from "core/vaadin-upload-file";
 import VaadinUpload from "core/vaadin-upload";
 
+import VaadinBoard from "pro/vaadin-board";
+import VaadinConfirmDialog from "pro/vaadin-confirm-dialog";
+import VaadinCookieConsent from "pro/vaadin-cookie-consent";
+import VaadinCrud from "pro/vaadin-crud";
+import VaadinGridPro from "pro/vaadin-grid-pro";
+import VaadinRichTextEditor from "pro/vaadin-rich-text-editor";
+
+
