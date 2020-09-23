@@ -1,15 +1,21 @@
-import {html, render} from 'lit-html';
-import { VaadinButton, VaadinComboBox, VaadinVerticalLayout, VaadinHorizontalLayout } from "./core-components";
-import { GridPro } from "pro/vaadin-grid-pro";
+import { html } from 'lit-html';
 
-render(html`
+const VaadinButton = import("core/vaadin-button");
+const VaadinComboBox  = import("core/vaadin-combo-box");
+const VaadinVerticalLayout  = import("core/vaadin-vertical-layout");
+
+const VaadinBoard  = import("pro/vaadin-board");
+
+const Button = html`
 <vaadin-vertical-layout>
   <vaadin-button onClick='window.alert("click")'>This Button</vaadin-button>
-  <vaadin-horizontal-layout>
-    <vaadin-combo-box id="combo" label="Selector"></vaadin-combo-box>
-  </vaadin-horizontal-layout>
+  <vaadin-combo-box id="combo" label="Selector"></vaadin-combo-box>
+
+  <vaadin-board></vaadin-board>
 </vaadin-vertical-layout>
-  `, document.body);
+  `;
+
+export default Button;
 
 
 customElements.whenDefined('vaadin-combo-box').then(function() {
