@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
+const shared = require("../share.js");
 
 module.exports = {
   entry: "./src/index",
@@ -31,15 +32,7 @@ module.exports = {
       exposes: {
         "./vaadin-board": "./node_modules/@vaadin/vaadin-board/vaadin-board"
       },
-      shared: {
-      "lit-html": { singleton: true, eager: true },
-      "@vaadin/vaadin-lumo-styles": {singleton: true},
-      "@polymer/iron-icon": {singleton: true, eager: true },
-      "@polymer/iron-list": {singleton: true, eager: true },
-      "@polymer/polymer": {singleton: true, eager: true },
-      "lit-element": { singleton: true },
-      "@vaadin/flow-frontend/comboBoxConnector.js": { singleton: true },
-    },
+      shared,
     }),
 /*    new HtmlWebpackPlugin({
       template: "./public/index.html",

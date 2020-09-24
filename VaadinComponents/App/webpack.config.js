@@ -4,6 +4,7 @@ const { WebpackPluginServe } = require("webpack-plugin-serve");
 const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
 const { mode } = require("webpack-nano/argv");
+const shared = require("../share.js");
 
 module.exports = {
   entry: "./src/index",
@@ -28,15 +29,7 @@ module.exports = {
         core: "core@./Core/core.js",
         pro: "pro@./Pro/pro.js",
       },
-      shared: {
-      "lit-html": { singleton: true, eager: true },
-      "@vaadin/vaadin-lumo-styles": {singleton: true},
-      "@polymer/iron-icon": {singleton: true, eager: true },
-      "@polymer/iron-list": {singleton: true, eager: true },
-      "@polymer/polymer": {singleton: true, eager: true },
-      "lit-element": { singleton: true },
-      "@vaadin/flow-frontend/comboBoxConnector.js": { singleton: true },
-    },
+      shared,
     }),
     
     new WebpackPluginServe({
