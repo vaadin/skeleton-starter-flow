@@ -1,3 +1,16 @@
+Buildign the parted version:
+For both Core and Pro forlders execute
+   pnpm i
+   pnpm build
+Then in App folder
+   pnpm i
+   pnpm start
+
+Navigate to localhost:3000
+
+
+Old setup::
+
 webpack.config.js now defines 4 packages:
  - app
     App is the lit "application" in ./src/app.js which is used through bootstrap.js

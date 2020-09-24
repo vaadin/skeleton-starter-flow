@@ -34,7 +34,6 @@ const getConfig = (mode) => {
     core: merge([
       parts.page({
         entry: {
-         // core_entry: path.join(__dirname, "frontend", "vaadin-core.js"),
         },
         mode,
       }),
@@ -52,7 +51,6 @@ const getConfig = (mode) => {
     pro: merge([
       parts.page({
         entry: {
-         // pro_entry: path.join(__dirname, "frontend", "vaadin-pro.js"),
         },
         mode,
       }),

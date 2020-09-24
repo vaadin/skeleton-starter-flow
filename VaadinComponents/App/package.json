@@ -5,7 +5,8 @@
     "main": "bootstrap.js",
     "scripts": {
         "start": "wp --mode development",
-        "build": "wp --mode production"
+        "build": "wp --mode production",
+        "core": "wp --config webpack.core.js --mode production"
     },
     "keywords": [],
     "author": "",
