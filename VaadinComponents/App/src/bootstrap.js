@@ -1,4 +1,4 @@
 import { render } from 'lit-html';
-import Button from "./button";
+import App from "./app";
 
-render(Button, document.body);
+render(App, document.body);

@@ -30,6 +30,7 @@ module.exports = {
       name: "pro",
       filename: "pro.js",
       exposes: {
+        "./vaadin-button": "./node_modules/@vaadin/vaadin-button/vaadin-button",
         "./vaadin-board": "./node_modules/@vaadin/vaadin-board/vaadin-board"
       },
       shared,

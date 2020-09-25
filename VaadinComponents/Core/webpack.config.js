@@ -30,7 +30,6 @@ module.exports = {
       name: "core",
       filename: "core.js",
       exposes: {
-        "./vaadin-button": "./node_modules/@vaadin/vaadin-button/vaadin-button",
         "./vaadin-combo-box": "./node_modules/@vaadin/vaadin-combo-box/vaadin-combo-box",
         "./vaadin-vertical-layout": "./node_modules/@vaadin/vaadin-ordered-layout/vaadin-vertical-layout"
       },
