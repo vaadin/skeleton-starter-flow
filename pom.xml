@@ -16,7 +16,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
-        <vaadin.version>14.3.7</vaadin.version>
+        <vaadin.version>14.4.0.beta1</vaadin.version>
         <jetty.version>9.4.28.v20200408</jetty.version>
     </properties>
 
@@ -31,6 +31,13 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <!-- The current version of Flow 3.0 is a pre-release version, so vaadin-prereleases repository is needed. -->
+        <repository>
+            <id>vaadin-prereleases</id>
+            <url>
+                https://maven.vaadin.com/vaadin-prereleases/
+            </url>
+        </repository>
         <!-- Repository used by many Vaadin add-ons -->
         <repository>
             <id>Vaadin Directory</id>
@@ -40,15 +47,21 @@
             </snapshots>
         </repository>
     </repositories>
-     
+
     <pluginRepositories>
-         <!-- Maven Central repository requires https:// to access -->
+        <!-- Main Maven repository -->
         <pluginRepository>
             <id>central</id>
             <url>https://repo.maven.apache.org/maven2</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>vaadin-prereleases</id>
+            <url>
+                https://maven.vaadin.com/vaadin-prereleases/
+            </url>
         </pluginRepository>
     </pluginRepositories>
 
