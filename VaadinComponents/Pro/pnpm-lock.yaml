@@ -2,8 +2,8 @@ dependencies:
   '@polymer/iron-icon': 3.0.1
   '@polymer/iron-list': 3.1.0
   '@polymer/polymer': 3.2.0
-  '@vaadin/vaadin-board': 2.2.0
   '@vaadin/vaadin-button': 2.4.0
+  '@vaadin/vaadin-lumo-styles': 1.6.0
   lit-element: 2.3.1
   lit-html: 1.3.0
 devDependencies:
@@ -272,15 +272,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-jiE3QIxJ8JLNcb1Ps6rDbysDhN4xa8DJJvuC9prr6w+1tIh+QAbYyNF3tyiZNLDBIuBCf4KEcV2UvQm/V60xfA==
-  /@vaadin/vaadin-board/2.2.0:
-    dependencies:
-      '@polymer/iron-resizable-behavior': 3.0.1
-      '@polymer/polymer': 3.2.0
-      '@vaadin/vaadin-element-mixin': 2.4.2
-      '@vaadin/vaadin-license-checker': 2.1.2
-    dev: false
-    resolution:
-      integrity: sha512-O4C/tY5MSFKpuHdvMD/W9r1AizstPnI5RpWN7ghbYoWs3FxZ+RRr9SfHHr1r94W6rSeaZsbaFjaaCPCncv/aAQ==
   /@vaadin/vaadin-button/2.4.0:
     dependencies:
       '@polymer/polymer': 3.2.0
@@ -310,12 +301,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-VSDVK0XUsFe/RohpwSzQwgqb2Pwpok6sDNhIDS4CARr3HPhq2voMzT/FowFbkEy0J1hFtN/ZfC7tkv3kdEKKIQ==
-  /@vaadin/vaadin-license-checker/2.1.2:
-    dependencies:
-      '@vaadin/vaadin-development-mode-detector': 2.0.4
-    dev: false
-    resolution:
-      integrity: sha512-oD6/MoavXyIZp6NWhkbJD5RKrpiWohhaQpgqjM0bFIthRr+1NoiG5R1w0uY3NIdMDuaXlsUFSQJ/Viz1v7F/jQ==
   /@vaadin/vaadin-lumo-styles/1.6.0:
     dependencies:
       '@polymer/iron-icon': 3.0.1
@@ -1502,8 +1487,8 @@ specifiers:
   '@polymer/iron-icon': 3.0.1
   '@polymer/iron-list': 3.1.0
   '@polymer/polymer': 3.2.0
-  '@vaadin/vaadin-board': 2.2.0
   '@vaadin/vaadin-button': 2.4.0
+  '@vaadin/vaadin-lumo-styles': 1.6.0
   babel-loader: ^8.1.0
   lit-element: 2.3.1
   lit-html: 1.3.0

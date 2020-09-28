@@ -20,8 +20,8 @@
       "@polymer/iron-icon": "3.0.1",
       "@polymer/iron-list": "3.1.0",
       "@polymer/polymer": "3.2.0",
-      "@vaadin/vaadin-board": "2.2.0",
       "@vaadin/vaadin-button": "2.4.0",
+      "@vaadin/vaadin-lumo-styles": "1.6.0",
       "lit-element": "2.3.1",
       "lit-html": "1.3.0"
     }

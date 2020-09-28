@@ -4,7 +4,7 @@ const { WebpackPluginServe } = require("webpack-plugin-serve");
 const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
 const { mode } = require("webpack-nano/argv");
-const shared = require("../share.js");
+const shared = require("./share.js");
 
 module.exports = {
   entry: "./src/index",

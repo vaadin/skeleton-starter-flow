@@ -4,7 +4,8 @@ const shared = {
         eager: true
     },
     "@vaadin/vaadin-lumo-styles": {
-        singleton: true
+        singleton: true,
+        eager: true
     },
     "@polymer/iron-icon": {
         singleton: true,
@@ -19,9 +20,6 @@ const shared = {
         eager: true
     },
     "lit-element": {
-        singleton: true
-    },
-    "@vaadin/flow-frontend/comboBoxConnector.js": {
         singleton: true
     },
 }

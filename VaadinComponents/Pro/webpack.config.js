@@ -1,17 +1,11 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
-const shared = require("../share.js");
+const shared = require("../App/share.js");
 
 module.exports = {
   entry: "./src/index",
   mode: "development",
-  /*
-  devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    port: 3002,
-  },
-  */
   output: {
     publicPath: "Pro/",
     path: path.join(__dirname, "../App/dist/Pro"),
@@ -30,15 +24,10 @@ module.exports = {
       name: "pro",
       filename: "pro.js",
       exposes: {
-        "./vaadin-button": "./node_modules/@vaadin/vaadin-button/vaadin-button",
-        "./vaadin-board": "./node_modules/@vaadin/vaadin-board/vaadin-board"
+        "./vaadin-button": "./node_modules/@vaadin/vaadin-button/vaadin-button"
       },
       shared,
-    }),
-/*    new HtmlWebpackPlugin({
-      template: "./public/index.html",
-    }),
-  */
+    })
   ],
 };
 
