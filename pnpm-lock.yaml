@@ -16,7 +16,7 @@ dependencies:
   '@vaadin/vaadin-confirm-dialog': 2.0.0
   '@vaadin/vaadin-context-menu': 5.0.0-alpha2
   '@vaadin/vaadin-cookie-consent': 2.0.0
-  '@vaadin/vaadin-core-shrinkwrap': 19.0.0-alpha2
+  '@vaadin/vaadin-core-shrinkwrap': 19.0.0-alpha3
   '@vaadin/vaadin-crud': 2.0.0-alpha2
   '@vaadin/vaadin-custom-field': 2.0.0-alpha1
   '@vaadin/vaadin-date-picker': 5.0.0-alpha1
@@ -39,7 +39,7 @@ dependencies:
   '@vaadin/vaadin-radio-button': 1.5.1
   '@vaadin/vaadin-rich-text-editor': 2.0.0-alpha2
   '@vaadin/vaadin-select': 3.0.0-alpha1
-  '@vaadin/vaadin-shrinkwrap': 19.0.0-alpha2
+  '@vaadin/vaadin-shrinkwrap': 19.0.0-alpha3
   '@vaadin/vaadin-split-layout': 4.3.0
   '@vaadin/vaadin-tabs': 4.0.0-alpha4
   '@vaadin/vaadin-text-field': 3.0.0-alpha1
@@ -1297,7 +1297,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-sT5EaPMMBHMjxjFCMZccgKLt4jVx0c3LOxlJT4fQ4N1quWA5sHfgKi4ih6Keq2AAKkXffMzdWkn7VyLKeP9RZw==
-  /@vaadin/vaadin-core-shrinkwrap/19.0.0-alpha2:
+  /@vaadin/vaadin-core-shrinkwrap/19.0.0-alpha3:
     dependencies:
       '@polymer/iron-a11y-announcer': 3.0.2
       '@polymer/iron-a11y-keys-behavior': 3.0.1
@@ -1353,7 +1353,7 @@ packages:
       '@webcomponents/shadycss': 1.9.6
     dev: false
     resolution:
-      integrity: sha512-SHIcqVZufvf5OL9oPnCX47mRakfv979KSLi/ShATY43Ln9tOLDqRhpCXamh3Qf0w32Wh39pTydDoyR3miYb9pw==
+      integrity: sha512-DXSHzA2GkkEaCBe8jqLVfC4thOYb6IDcKNiaxeBqBE+IvvfxnMDKZdJCB+YW3SaD4UGAOawUX9I1/osNsfS6OQ==
   /@vaadin/vaadin-crud/2.0.0-alpha2:
     dependencies:
       '@polymer/iron-media-query': 3.0.1
@@ -1656,7 +1656,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-19nlUOkgzay3DSMUCIENzbmhDYTfOaDNl4T9M3//SGZHeMJsPVS5wkiHtinPqcJ501Ts1surQVYvlRwKczXxjg==
-  /@vaadin/vaadin-shrinkwrap/19.0.0-alpha2:
+  /@vaadin/vaadin-shrinkwrap/19.0.0-alpha3:
     dependencies:
       '@polymer/iron-a11y-announcer': 3.0.2
       '@polymer/iron-a11y-keys-behavior': 3.0.1
@@ -1719,7 +1719,7 @@ packages:
       '@webcomponents/shadycss': 1.9.6
     dev: false
     resolution:
-      integrity: sha512-F1PxXLYtystmEDQxxG96GV3AhMGpqlx8HMrvcVSnG+5EHbq8bkxdMYdjAj0dzZ/KMsgH+rpHIkISy8rr7UUNKg==
+      integrity: sha512-yy8ONwxechy9/CPBTKJn4HxdjVHo+NqCzeXA0IFqfZtW90ziBISCLeOFwxbJH4z3EjK7MQzRhVjySZNpsF62FA==
   /@vaadin/vaadin-split-layout/4.3.0:
     dependencies:
       '@polymer/iron-resizable-behavior': 3.0.1
@@ -8112,7 +8112,7 @@ specifiers:
   '@vaadin/vaadin-confirm-dialog': 2.0.0
   '@vaadin/vaadin-context-menu': 5.0.0-alpha2
   '@vaadin/vaadin-cookie-consent': 2.0.0
-  '@vaadin/vaadin-core-shrinkwrap': 19.0.0-alpha2
+  '@vaadin/vaadin-core-shrinkwrap': 19.0.0-alpha3
   '@vaadin/vaadin-crud': 2.0.0-alpha2
   '@vaadin/vaadin-custom-field': 2.0.0-alpha1
   '@vaadin/vaadin-date-picker': 5.0.0-alpha1
@@ -8135,7 +8135,7 @@ specifiers:
   '@vaadin/vaadin-radio-button': 1.5.1
   '@vaadin/vaadin-rich-text-editor': 2.0.0-alpha2
   '@vaadin/vaadin-select': 3.0.0-alpha1
-  '@vaadin/vaadin-shrinkwrap': 19.0.0-alpha2
+  '@vaadin/vaadin-shrinkwrap': 19.0.0-alpha3
   '@vaadin/vaadin-split-layout': 4.3.0
   '@vaadin/vaadin-tabs': 4.0.0-alpha4
   '@vaadin/vaadin-text-field': 3.0.0-alpha1
