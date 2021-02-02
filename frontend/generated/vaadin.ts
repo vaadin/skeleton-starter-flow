@@ -1,5 +1,4 @@
 import '../../target/index';
 
-//@ts-ignore
-import {applyTheme} from '../../target/flow-frontend/themes/theme-generated.js';
+import { applyTheme } from './theme';
 applyTheme(document);
