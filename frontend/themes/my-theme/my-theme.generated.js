@@ -42,15 +42,14 @@ import '@vaadin/vaadin-lumo-styles/typography.js';
 import vaadinTextFieldCss from './components/vaadin-text-field.css';
 
 window.Vaadin = window.Vaadin || {};
-window.Vaadin.Flow = window.Vaadin.Flow || {};
-window.Vaadin.Flow['_vaadintheme_my-theme_globalCss'] = window.Vaadin.Flow['_vaadintheme_my-theme_globalCss'] || [];
+window.Vaadin['_vaadintheme_my-theme_globalCss'] = window.Vaadin['_vaadintheme_my-theme_globalCss'] || [];
 export const applyTheme = (target) => {
   
-  const injectGlobal = (window.Vaadin.Flow['_vaadintheme_my-theme_globalCss'].length === 0) || (!window.Vaadin.Flow['_vaadintheme_my-theme_globalCss'].includes(target) && target !== document);
+  const injectGlobal = (window.Vaadin['_vaadintheme_my-theme_globalCss'].length === 0) || (!window.Vaadin['_vaadintheme_my-theme_globalCss'].includes(target) && target !== document);
   if (injectGlobal) {
     injectGlobalCss(stylesCss.toString(), target);
     
-    window.Vaadin.Flow['_vaadintheme_my-theme_globalCss'].push(target);
+    window.Vaadin['_vaadintheme_my-theme_globalCss'].push(target);
   }
   if (!document['_vaadintheme_my-theme_componentCss']) {
     registerStyles(
