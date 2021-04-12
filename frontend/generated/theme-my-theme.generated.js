@@ -36,10 +36,10 @@ const getStyleModule = (id) => {
       .join(" ");
   return cssText;
 };
-import stylesCss from './styles.css';
+import stylesCss from 'themes/my-theme/styles.css';
 import '@vaadin/vaadin-lumo-styles/color.js';
 import '@vaadin/vaadin-lumo-styles/typography.js';
-import vaadinTextFieldCss from './components/vaadin-text-field.css';
+import vaadinTextFieldCss from 'themes/my-theme/components/vaadin-text-field.css';
 
 window.Vaadin = window.Vaadin || {};
 window.Vaadin['_vaadintheme_my-theme_globalCss'] = window.Vaadin['_vaadintheme_my-theme_globalCss'] || [];
