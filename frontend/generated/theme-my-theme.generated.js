@@ -37,10 +37,10 @@ const createLinkReferences = (css, target) => {
 export const injectGlobalCss = (css, target, first) => {
   if(target === document) {
     const hash = getHash(css);
-    if (window.Vaadin.Flow.injectedGlobalCss.indexOf(hash) !== -1) {
+    if (window.Vaadin.theme.injectedGlobalCss.indexOf(hash) !== -1) {
       return;
     }
-    window.Vaadin.Flow.injectedGlobalCss.push(hash);
+    window.Vaadin.theme.injectedGlobalCss.push(hash);
   }
   const sheet = new CSSStyleSheet();
   sheet.replaceSync(createLinkReferences(css,target));
@@ -79,7 +79,8 @@ import '@vaadin/vaadin-lumo-styles/typography.js';
 import vaadinTextFieldCss from 'themes/my-theme/components/vaadin-text-field.css';
 
 window.Vaadin = window.Vaadin || {};
-window.Vaadin.Flow.injectedGlobalCss = [];
+window.Vaadin.theme = window.Vaadin.theme || {};
+window.Vaadin.theme.injectedGlobalCss = [];
 
 /**
  * Calculate a 32 bit FNV-1a hash
