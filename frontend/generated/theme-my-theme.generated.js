@@ -138,7 +138,7 @@ injectGlobalCss(getStyleModule("lumo-typography"), target, true);
 } else if (!document['_vaadinthemelumoimports_']) {
 addStyleInclude("lumo-color", target);
 addStyleInclude("lumo-typography", target);
-document['_vaadinthemelumoimports_'] = true;
+if(window.ShadyCSS) { window.ShadyCSS.CustomStyleInterface.processStyles(); }document['_vaadinthemelumoimports_'] = true;
 }
 
 }
