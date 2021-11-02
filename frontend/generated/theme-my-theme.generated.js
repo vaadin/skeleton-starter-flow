@@ -1,5 +1,5 @@
 import 'construct-style-sheets-polyfill';
-import { css, unsafeCSS, registerStyles } from '@vaadin/vaadin-themable-mixin/register-styles';
+import { unsafeCSS, registerStyles } from '@vaadin/vaadin-themable-mixin/register-styles';
 
 const createLinkReferences = (css, target) => {
   // Unresolved urls are written as '@import url(text);' to the css
@@ -96,9 +96,7 @@ export const applyTheme = (target) => {
   if (!document['_vaadintheme_my-theme_componentCss']) {
     registerStyles(
       'vaadin-text-field',
-      css`
-        ${unsafeCSS(vaadinTextFieldCss.toString())}
-      `
+      unsafeCSS(vaadinTextFieldCss.toString())
     );
     
     document['_vaadintheme_my-theme_componentCss'] = true;
