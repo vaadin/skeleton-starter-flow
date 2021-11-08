@@ -2,7 +2,7 @@ import 'construct-style-sheets-polyfill';
 import { DomModule } from "@polymer/polymer/lib/elements/dom-module";
 import { stylesFromTemplate } from "@polymer/polymer/lib/utils/style-gather";
 import "@polymer/polymer/lib/elements/custom-style.js";
-import { css, unsafeCSS, registerStyles } from '@vaadin/vaadin-themable-mixin/register-styles';
+import { unsafeCSS, registerStyles } from '@vaadin/vaadin-themable-mixin/register-styles';
 
 const createLinkReferences = (css, target) => {
   // Unresolved urls are written as '@import url(text);' to the css
@@ -122,9 +122,7 @@ export const applyTheme = (target) => {
   if (!document['_vaadintheme_my-theme_componentCss']) {
     registerStyles(
       'vaadin-text-field',
-      css`
-        ${unsafeCSS(vaadinTextFieldCss.toString())}
-      `
+      unsafeCSS(vaadinTextFieldCss.toString())
     );
     
     document['_vaadintheme_my-theme_componentCss'] = true;
