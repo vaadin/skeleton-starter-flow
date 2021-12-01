@@ -47,10 +47,10 @@ export const injectGlobalCss = (css, target, first) => {
     target.adoptedStyleSheets = [...target.adoptedStyleSheets, sheet];
   }
 };
-import stylesCss from 'themes/my-theme/styles.css';
+import stylesCss from 'themes/my-theme/styles.css?inline';
 import { color } from '@vaadin/vaadin-lumo-styles';
 import { typography } from '@vaadin/vaadin-lumo-styles';
-import vaadinTextFieldCss from 'themes/my-theme/components/vaadin-text-field.css';
+import vaadinTextFieldCss from 'themes/my-theme/components/vaadin-text-field.css?inline';
 
 window.Vaadin = window.Vaadin || {};
 window.Vaadin.theme = window.Vaadin.theme || {};
