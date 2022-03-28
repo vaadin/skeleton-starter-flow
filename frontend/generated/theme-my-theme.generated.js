@@ -48,8 +48,8 @@ export const injectGlobalCss = (css, target, first) => {
   }
 };
 import stylesCss from 'themes/my-theme/styles.css?inline';
-import { color } from '@vaadin/vaadin-lumo-styles';
-import { typography } from '@vaadin/vaadin-lumo-styles';
+import { color } from '@vaadin/vaadin-lumo-styles/color.js';
+import { typography } from '@vaadin/vaadin-lumo-styles/typography.js';
 import vaadinTextFieldCss from 'themes/my-theme/components/vaadin-text-field.css?inline';
 
 window.Vaadin = window.Vaadin || {};
