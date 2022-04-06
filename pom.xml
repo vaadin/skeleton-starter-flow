@@ -222,7 +222,7 @@
                                 <id>start-jetty</id>
                                 <phase>pre-integration-test</phase>
                                 <goals>
-                                    <goal>deploy-war</goal>
+                                    <goal>start</goal>
                                 </goals>
                             </execution>
                             <execution>
