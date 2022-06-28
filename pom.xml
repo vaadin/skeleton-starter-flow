@@ -158,11 +158,6 @@
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-maven-plugin</artifactId>
                 <version>${vaadin.version}</version>
-                <configuration>
-                    <requireHomeNodeExec>true</requireHomeNodeExec>
-                    <nodeAutoUpdate>true</nodeAutoUpdate>
-                    <nodeVersion>v17.9.0</nodeVersion>
-                </configuration>
                 <executions>
                     <execution>
                         <goals>
