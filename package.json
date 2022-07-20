@@ -284,7 +284,7 @@
       "workbox-precaching": "6.5.0",
       "workbox-webpack-plugin": "6.5.0"
     },
-    "hash": "fe07acec366cd3ee484d5fb7f3ff98b896c08f5f854e461301f84179fe38ed36"
+    "hash": "caf6993fca1b0d5532e4320e3b085c37b004fb8cb1efb9dbfe8f6087ea2f14de"
   },
   "overrides": {
     "@vaadin/accordion": "$@vaadin/accordion",
