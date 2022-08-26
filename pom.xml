@@ -17,6 +17,7 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
         <vaadin.version>23.2.0.beta2</vaadin.version>
+        <flow.version>24.0.0.alpha1</flow.version>
         <drivers.downloader.phase>pre-integration-test</drivers.downloader.phase>
         <jetty.version>11.0.8</jetty.version>
     </properties>
@@ -74,7 +75,7 @@
             <dependency>
                 <groupId>com.vaadin</groupId>
                 <artifactId>flow-bom</artifactId>
-                <version>23.2.jakarta-servlet5-SNAPSHOT</version>
+                <version>${flow.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -103,13 +104,6 @@
         </dependency>
 
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-testbench</artifactId>
             <scope>test</scope>
@@ -127,7 +121,7 @@
     <build>
         <defaultGoal>jetty:run</defaultGoal>
         <plugins>
-            <!-- Define newer versions of Java compiler and war plugin to 
+            <!-- Define newer versions of Java compiler and war plugin to
                  better support latest JDK versions. -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
