@@ -18,7 +18,6 @@
 
         <vaadin.version>23.1.7</vaadin.version>
         <drivers.downloader.phase>pre-integration-test</drivers.downloader.phase>
-        <jetty.version>10.0.9</jetty.version>
     </properties>
 
     <repositories>
@@ -132,16 +131,24 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.1</version>
             </plugin>
-            <!-- Jetty plugin for easy testing without a server -->
+            <!-- Jetty plugin for easy testing without a separate server -->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>${jetty.version}</version>
+                <version>10.0.11</version>
                 <configuration>
-                    <!-- If using IntelliJ IDEA with autocompilation, this
+                    <!--
+                    Configures automatic reload of Jetty server
+                    (with 2 second timeout) when new classes are compiled 
+                    (e.g. by IDEs).
+                    Should be disabeld when using a proper live reload system,
+                    such as JRebel.
+                    If using IntelliJ IDEA with autocompilation, this
                     might cause lots of unnecessary compilations in the
-                    background.-->
-                    <scanIntervalSeconds>2</scanIntervalSeconds>
+                    background. Consider using "0" and trigger restart manually
+                    by hitting enter.
+                    -->
+                    <scan>2</scan>
                     <!-- Use war output directory to get the webpack files -->
                     <webAppConfig>
                         <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
@@ -203,7 +210,6 @@
                     <plugin>
                         <groupId>org.eclipse.jetty</groupId>
                         <artifactId>jetty-maven-plugin</artifactId>
-                        <version>${jetty.version}</version>
                         <configuration>
                             <scanIntervalSeconds>0</scanIntervalSeconds>
                             <stopPort>8081</stopPort>
