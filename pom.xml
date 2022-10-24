@@ -16,10 +16,9 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
-        <vaadin.version>23.2.0.beta2</vaadin.version>
-        <flow.version>24.0.0.alpha1</flow.version>
+        <vaadin.version>24.0-SNAPSHOT</vaadin.version>
         <drivers.downloader.phase>pre-integration-test</drivers.downloader.phase>
-        <jetty.version>11.0.8</jetty.version>
+        <jetty.version>11.0.12</jetty.version>
     </properties>
 
     <repositories>
@@ -69,20 +68,13 @@
                 https://maven.vaadin.com/vaadin-prereleases/
             </url>
             <snapshots>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>com.vaadin</groupId>
-                <artifactId>flow-bom</artifactId>
-                <version>${flow.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
             <dependency>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-bom</artifactId>
