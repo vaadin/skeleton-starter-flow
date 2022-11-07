@@ -1,5 +1,6 @@
 import 'construct-style-sheets-polyfill';
 import { unsafeCSS, registerStyles } from '@vaadin/vaadin-themable-mixin/register-styles';
+import stripCssComments from 'strip-css-comments';
 
 const createLinkReferences = (css, target) => {
   // Unresolved urls are written as '@import url(text);' or '@import "text";' to the css
@@ -12,6 +13,12 @@ const createLinkReferences = (css, target) => {
   // [4] matches the url in '@import "..."'
   // [5] matches media query on @import statement
   const importMatcher = /(?:@media\s(.+?))?(?:\s{)?\@import\s*(?:url\(\s*['"]?(.+?)['"]?\s*\)|(["'])((?:\\.|[^\\])*?)\3)([^;]*);(?:})?/g
+  
+  // Only cleanup if comment exist
+  if(/\/\*(.|[\r\n])*?\*\//gm.exec(css) != null) {
+    // clean up comments
+    css = stripCssComments(css);
+  }
   
   var match;
   var styleCss = css;
