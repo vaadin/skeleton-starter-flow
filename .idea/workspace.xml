@@ -1,6 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d1b181c6-a316-4c68-90fd-982236c878d4" name="Changes" comment="test: junit5-demo">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/vaadin/example/LoginForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/vaadin/example/LoginFormExporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/vaadin/example/LoginFormView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/vaadin/example/MainAppServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/vaadin/example/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/vaadin/example/WebComponentVaadinServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/log-in.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/generated/vaadin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/generated/vaadin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/vaadin/example/AppShell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/vaadin/example/GreetService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/vaadin/example/MainView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="junit5-demo" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="v\[0-9\]\[0-9\]" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-testbench-core/8.1.0.beta3/vaadin-testbench-core-8.1.0.beta3.jar!/com/vaadin/testbench/HasElementQuery.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/4.4.0/selenium-support-4.4.0.jar!/org/openqa/selenium/support/ui/ExpectedCondition.class" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectId" id="2GOtsKGQhQeB4rs8dZdzGbwHhPE" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/vaadin/src/skeleton-starter-flow/src/test/resources&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.vaadin.example" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.Test04ParallelExecutionIT">
+    <configuration name="Test01SimpleCaseIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project-base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.vaadin.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.vaadin.example" />
+      <option name="MAIN_CLASS_NAME" value="org.vaadin.example.Test01SimpleCaseIT" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test02SafariIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project-base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.vaadin.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.vaadin.example" />
+      <option name="MAIN_CLASS_NAME" value="org.vaadin.example.Test02SafariIT" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test03WrongBrowserIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project-base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.vaadin.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.vaadin.example" />
+      <option name="MAIN_CLASS_NAME" value="org.vaadin.example.Test03WrongBrowserIT" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test04ParallelExecutionIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project-base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.vaadin.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.vaadin.example" />
+      <option name="MAIN_CLASS_NAME" value="org.vaadin.example.Test04ParallelExecutionIT" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test05RetryOnFailure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project-base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.vaadin.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.vaadin.example" />
+      <option name="MAIN_CLASS_NAME" value="org.vaadin.example.Test05RetryOnFailure" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Test05RetryOnFailure" />
+        <item itemvalue="JUnit.Test04ParallelExecutionIT" />
+        <item itemvalue="JUnit.Test03WrongBrowserIT" />
+        <item itemvalue="JUnit.Test02SafariIT" />
+        <item itemvalue="JUnit.Test01SimpleCaseIT" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d1b181c6-a316-4c68-90fd-982236c878d4" name="Changes" comment="" />
+      <created>1666271664065</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666271664065</updated>
+    </task>
+    <task id="LOCAL-00001" summary="test: junit5-demo">
+      <created>1666272068878</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666272068878</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test: junit5-demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="test: junit5-demo" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-testbench-core-junit5/9.0-SNAPSHOT/vaadin-testbench-core-junit5-9.0-SNAPSHOT-sources.jar!/com/vaadin/testbench/capabilities/CapabilitiesExtension.java</url>
+          <line>203</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/skeleton_starter_flow$MainViewIT_clickingButtonShowsNotification_clickingButtonShowsNotification_ANY_Chrome__.ic" NAME="MainViewIT.clickingButtonShowsNotification.clickingButtonShowsNotification[ANY_Chrome_] Coverage Results" MODIFIED="1666215946193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.vaadin.example.*</FILTER>
+    </SUITE>
   </component>
 </project>
