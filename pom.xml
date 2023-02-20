@@ -138,11 +138,11 @@
                     <!-- If using IntelliJ IDEA with autocompilation, this
                     might cause lots of unnecessary compilations in the
                     background.-->
-                    <scanIntervalSeconds>2</scanIntervalSeconds>
+                    <scan>2</scan>
                     <!-- Use war output directory to get the webpack files -->
-                    <webAppConfig>
+                    <webApp>
                         <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
-                    </webAppConfig>
+                    </webApp>
                 </configuration>
             </plugin>
 
@@ -202,7 +202,7 @@
                         <artifactId>jetty-maven-plugin</artifactId>
                         <version>${jetty.version}</version>
                         <configuration>
-                            <scanIntervalSeconds>0</scanIntervalSeconds>
+                            <scan>0</scan>
                             <stopPort>8081</stopPort>
                             <stopWait>5</stopWait>
                             <stopKey>${project.artifactId}</stopKey>
