@@ -1,10 +1,7 @@
 /*
    CSS styling examples for the Vaadin app.
 
-   This is the style entrypoint for the theme and together with css in ./components/ included
-   automatically into the theme.
-
-   Visit https://vaadin.com/docs-beta/latest/theming/application-theme/ for more information.
+   Visit https://vaadin.com/docs/styling/application-theme/ for more information.
 */
 
 /* Example: CSS class name to center align the content . */
@@ -13,8 +10,8 @@
   max-width: 250px;
 }
 
-/* Example: the style is applied only to the textfields which has the `bordered` theme attribute. */
-vaadin-text-field[bordered]::part(input-field) {
+/* Example: the style is applied only to the textfields which have the `bordered` class name. */
+vaadin-text-field.bordered::part(input-field) {
   box-shadow: inset 0 0 0 1px var(--lumo-contrast-30pct);
   background-color: var(--lumo-base-color);
 }
