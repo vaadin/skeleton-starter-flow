@@ -1,7 +1,7 @@
 package org.vaadin.example;
 
 import com.vaadin.flow.component.button.testbench.ButtonElement;
-import com.vaadin.flow.component.notification.testbench.NotificationElement;
+import com.vaadin.flow.component.html.testbench.ParagraphElement;
 import com.vaadin.flow.component.textfield.testbench.TextFieldElement;
 import com.vaadin.flow.theme.lumo.Lumo;
 import org.junit.Assert;
@@ -12,19 +12,19 @@ import org.openqa.selenium.WebElement;
 public class MainViewIT extends AbstractViewTest {
 
     @Test
-    public void clickingButtonShowsNotification() {
-        Assert.assertFalse($(NotificationElement.class).exists());
+    public void clickingButtonAddsParagraph() {
+        Assert.assertFalse($(ParagraphElement.class).exists());
         $(ButtonElement.class).first().click();
-        Assert.assertTrue($(NotificationElement.class).waitForFirst().isOpen());
+        Assert.assertTrue($(ParagraphElement.class).exists());
     }
 
     @Test
     public void clickingButtonTwiceShowsTwoNotifications() {
-        Assert.assertFalse($(NotificationElement.class).exists());
+        Assert.assertFalse($(ParagraphElement.class).exists());
         ButtonElement button = $(ButtonElement.class).first();
         button.click();
         button.click();
-        Assert.assertEquals(2, $(NotificationElement.class).all().size());
+        Assert.assertEquals(2, $(ParagraphElement.class).all().size());
     }
 
     @Test
@@ -37,9 +37,9 @@ public class MainViewIT extends AbstractViewTest {
     public void testClickButtonShowsHelloAnonymousUserNotificationWhenUserNameIsEmpty() {
         ButtonElement button = $(ButtonElement.class).first();
         button.click();
-        Assert.assertTrue($(NotificationElement.class).exists());
-        NotificationElement notification = $(NotificationElement.class).first();
-        Assert.assertEquals("Hello anonymous user", notification.getText());
+        Assert.assertTrue($(ParagraphElement.class).exists());
+        ParagraphElement msg = $(ParagraphElement.class).first();
+        Assert.assertEquals("Hello anonymous user", msg.getText());
     }
 
     @Test
@@ -48,9 +48,9 @@ public class MainViewIT extends AbstractViewTest {
         textField.setValue("Vaadiner");
         ButtonElement button = $(ButtonElement.class).first();
         button.click();
-        Assert.assertTrue($(NotificationElement.class).exists());
-        NotificationElement notification = $(NotificationElement.class).first();
-        Assert.assertEquals("Hello Vaadiner", notification.getText());
+        Assert.assertTrue($(ParagraphElement.class).exists());
+        ParagraphElement msg = $(ParagraphElement.class).first();
+        Assert.assertEquals("Hello Vaadiner", msg.getText());
     }
 
     @Test
@@ -58,8 +58,8 @@ public class MainViewIT extends AbstractViewTest {
         TextFieldElement textField = $(TextFieldElement.class).first();
         textField.setValue("Vaadiner");
         textField.sendKeys(Keys.ENTER);
-        Assert.assertTrue($(NotificationElement.class).exists());
-        NotificationElement notification = $(NotificationElement.class).first();
-        Assert.assertEquals("Hello Vaadiner", notification.getText());
+        Assert.assertTrue($(ParagraphElement.class).exists());
+        ParagraphElement msg = $(ParagraphElement.class).first();
+        Assert.assertEquals("Hello Vaadiner", msg.getText());
     }
 }
