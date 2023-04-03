@@ -61,8 +61,11 @@ export const injectGlobalCss = (css, target, first) => {
   }
 };
 import stylesCss from 'themes/my-theme/styles.css?inline';
-import { color } from '@vaadin/vaadin-lumo-styles/color.js';
 import { typography } from '@vaadin/vaadin-lumo-styles/typography.js';
+import { color } from '@vaadin/vaadin-lumo-styles/color.js';
+import { spacing } from '@vaadin/vaadin-lumo-styles/spacing.js';
+import { badge } from '@vaadin/vaadin-lumo-styles/badge.js';
+import { utility } from '@vaadin/vaadin-lumo-styles/utility.js';
 import vaadinTextFieldCss from 'themes/my-theme/components/vaadin-text-field.css?inline';
 
 window.Vaadin = window.Vaadin || {};
@@ -114,7 +117,10 @@ export const applyTheme = (target) => {
     
     document['_vaadintheme_my-theme_componentCss'] = true;
   }
-  injectGlobalCss(color.cssText, target, true);
-injectGlobalCss(typography.cssText, target, true);
+  injectGlobalCss(typography.cssText, target, true);
+injectGlobalCss(color.cssText, target, true);
+injectGlobalCss(spacing.cssText, target, true);
+injectGlobalCss(badge.cssText, target, true);
+injectGlobalCss(utility.cssText, target, true);
 
 }
