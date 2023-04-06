@@ -118,7 +118,7 @@
     "construct-style-sheets-polyfill": "3.1.0",
     "date-fns": "2.29.3",
     "lit": "2.6.1",
-    "proj4": "2.8.1"
+    "proj4": "2.9.0"
   },
   "devDependencies": {
     "@rollup/plugin-replace": "3.1.0",
@@ -277,7 +277,7 @@
       "workbox-core": "6.5.4",
       "workbox-precaching": "6.5.4"
     },
-    "hash": "b6ca9f9decd5fa40a00c7d84c890545ce437106a7f503547de1cbb1b84e5f7c8"
+    "hash": "f4a073071e554144c6fcc7bfae06e1197e65446c10634a5824d3bdebe224b8b5"
   },
   "overrides": {
     "@vaadin/accordion": "$@vaadin/accordion",
