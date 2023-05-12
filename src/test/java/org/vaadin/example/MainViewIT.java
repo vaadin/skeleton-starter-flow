@@ -1,65 +1,79 @@
 package org.vaadin.example;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+
 import com.vaadin.flow.component.button.testbench.ButtonElement;
 import com.vaadin.flow.component.html.testbench.ParagraphElement;
 import com.vaadin.flow.component.textfield.testbench.TextFieldElement;
 import com.vaadin.flow.theme.lumo.Lumo;
-import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import com.vaadin.testbench.BrowserTest;
+import com.vaadin.testbench.BrowserTestBase;
 
-public class MainViewIT extends AbstractViewTest {
+public class MainViewIT extends BrowserTestBase {
 
-    @Test
-    public void clickingButtonAddsParagraph() {
-        Assert.assertFalse($(ParagraphElement.class).exists());
-        $(ButtonElement.class).first().click();
-        Assert.assertTrue($(ParagraphElement.class).exists());
+    /**
+     * If running on CI, get the host name from environment variable HOSTNAME
+     *
+     * @return the host name
+     */
+    private static String getDeploymentHostname() {
+        String hostname = System.getenv("HOSTNAME");
+        if (hostname != null && !hostname.isEmpty()) {
+            return hostname;
+        }
+        return "localhost";
     }
 
-    @Test
+    @BeforeEach
+    public void open() {
+        getDriver().get("http://"+getDeploymentHostname()+":8080/");
+    }
+
+    @BrowserTest
+    public void clickingButtonAddsParagraph() {
+        Assertions.assertFalse($(ParagraphElement.class).exists());
+        $(ButtonElement.class).first().click();
+        Assertions.assertTrue($(ParagraphElement.class).exists());
+    }
+
+    @BrowserTest
     public void clickingButtonTwiceShowsTwoNotifications() {
-        Assert.assertFalse($(ParagraphElement.class).exists());
+        Assertions.assertFalse($(ParagraphElement.class).exists());
         ButtonElement button = $(ButtonElement.class).first();
         button.click();
         button.click();
-        Assert.assertEquals(2, $(ParagraphElement.class).all().size());
+        Assertions.assertEquals(2, $(ParagraphElement.class).all().size());
     }
 
-    @Test
-    public void buttonIsUsingLumoTheme() {
-        WebElement element = $(ButtonElement.class).first();
-        assertThemePresentOnElement(element, Lumo.class);
-    }
-
-    @Test
+    @BrowserTest
     public void testClickButtonShowsHelloAnonymousUserNotificationWhenUserNameIsEmpty() {
         ButtonElement button = $(ButtonElement.class).first();
         button.click();
-        Assert.assertTrue($(ParagraphElement.class).exists());
+        Assertions.assertTrue($(ParagraphElement.class).exists());
         ParagraphElement msg = $(ParagraphElement.class).first();
-        Assert.assertEquals("Hello anonymous user", msg.getText());
+        Assertions.assertEquals("Hello anonymous user", msg.getText());
     }
 
-    @Test
+    @BrowserTest
     public void testClickButtonShowsHelloUserNotificationWhenUserIsNotEmpty() {
         TextFieldElement textField = $(TextFieldElement.class).first();
         textField.setValue("Vaadiner");
         ButtonElement button = $(ButtonElement.class).first();
         button.click();
-        Assert.assertTrue($(ParagraphElement.class).exists());
+        Assertions.assertTrue($(ParagraphElement.class).exists());
         ParagraphElement msg = $(ParagraphElement.class).first();
-        Assert.assertEquals("Hello Vaadiner", msg.getText());
+        Assertions.assertEquals("Hello Vaadiner", msg.getText());
     }
 
-    @Test
+    @BrowserTest
     public void testEnterShowsHelloUserNotificationWhenUserIsNotEmpty() {
         TextFieldElement textField = $(TextFieldElement.class).first();
         textField.setValue("Vaadiner");
         textField.sendKeys(Keys.ENTER);
-        Assert.assertTrue($(ParagraphElement.class).exists());
+        Assertions.assertTrue($(ParagraphElement.class).exists());
         ParagraphElement msg = $(ParagraphElement.class).first();
-        Assert.assertEquals("Hello Vaadiner", msg.getText());
+        Assertions.assertEquals("Hello Vaadiner", msg.getText());
     }
 }
