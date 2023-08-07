@@ -1,38 +1,40 @@
 package org.vaadin.example.security;
 
-import jakarta.servlet.ServletException;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
+import org.slf4j.LoggerFactory;
 
 import com.vaadin.flow.component.UI;
-import com.vaadin.flow.server.VaadinServletRequest;
-import com.vaadin.flow.server.VaadinSession;
 
+/**
+ * Utility class wrapping Shiro security features.
+ */
 public class SecurityUtils {
 
     private static final String LOGOUT_SUCCESS_URL = "/";
 
     public static boolean isAuthenticated() {
-        VaadinServletRequest request = VaadinServletRequest.getCurrent();
-        return request != null && request.getUserPrincipal() != null;
+        return org.apache.shiro.SecurityUtils.getSubject().isAuthenticated();
     }
 
     public static boolean authenticate(String username, String password) {
-        VaadinServletRequest request = VaadinServletRequest.getCurrent();
-        if (request == null) {
-            // This is in a background thread and we can't access the request to
-            // log in the user
-            return false;
-        }
         try {
-            request.login(username, password);
+            org.apache.shiro.SecurityUtils.getSecurityManager().authenticate(
+                    new UsernamePasswordToken(username, password));
             return true;
-        } catch (ServletException e) {
-            // login exception handle code omitted
-            return false;
+        } catch (AuthenticationException ex) {
+            LoggerFactory.getLogger(SecurityUtils.class)
+                    .debug("Cannot authenticate user", ex);
         }
+        return false;
     }
 
     public static void logout() {
-        VaadinSession.getCurrent().getSession().invalidate();
+        Subject subject = org.apache.shiro.SecurityUtils.getSubject();
+        if (subject.isAuthenticated()) {
+            org.apache.shiro.SecurityUtils.getSecurityManager().logout(subject);
+        }
         UI.getCurrent().getPage().setLocation(LOGOUT_SUCCESS_URL);
     }
 }

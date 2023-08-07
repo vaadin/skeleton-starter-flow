@@ -12,11 +12,9 @@ import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.auth.AnonymousAllowed;
 
 @Route("login")
 @PageTitle("Login")
-@AnonymousAllowed
 public class LoginView extends VerticalLayout implements BeforeEnterObserver,
         ComponentEventListener<AbstractLogin.LoginEvent> {
 
@@ -31,16 +29,14 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver,
         setJustifyContentMode(JustifyContentMode.CENTER);
         setAlignItems(Alignment.CENTER);
         login.setAction("/login");
-        //login.addLoginListener(this);
+        // login.addLoginListener(this);
 
         add(new H1("Test Application"), login);
     }
 
     @Override
     public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
-        if (beforeEnterEvent.getLocation()
-                .getQueryParameters()
-                .getParameters()
+        if (beforeEnterEvent.getLocation().getQueryParameters().getParameters()
                 .containsKey("error")) {
             login.setError(true);
         }

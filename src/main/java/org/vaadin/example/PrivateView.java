@@ -10,7 +10,7 @@ import com.vaadin.flow.router.Route;
 
 @Route(value = "private", layout = MainLayout.class)
 @PageTitle("Private View")
-@PermitAll
+//@PermitAll
 public class PrivateView extends VerticalLayout {
 
     public PrivateView() {
