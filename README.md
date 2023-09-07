@@ -36,6 +36,11 @@ The project follow Maven's [standard directory layout structure](https://maven.a
   dependencies and resource files. Example CSS styles used by the application 
   are located under `frontend/themes`
 
+## Workspace.xml file
+IntelliJ IDEA uses `workspace.xml` file to cache user-specific project configuration.
+Tracking of local changes to the `workspace.xml` file can be prevented with the `git update-index --assume-unchanged .idea/workspace.xml` command.
+And to revert the setting: `git update-index --no-assume-unchanged .idea/workspace.xml`.
+
 ## Useful links
 
 - Read the documentation at [vaadin.com/docs](https://vaadin.com/docs).
