@@ -12,6 +12,7 @@ import org.apache.shiro.web.filter.authc.AuthenticationFilter;
 import org.apache.shiro.web.filter.authc.UserFilter;
 import org.apache.shiro.web.filter.mgt.FilterChainManager;
 import org.apache.shiro.web.filter.mgt.PathMatchingFilterChainResolver;
+import org.apache.shiro.web.servlet.OncePerRequestFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,6 +57,7 @@ class ShiroUrlsAccessPathChecker implements AccessPathChecker {
                 .map(chain -> chain.stream()
                         .filter(PathMatchingFilter.class::isInstance)
                         .map(PathMatchingFilter.class::cast)
+                        .filter(OncePerRequestFilter::isEnabled)
                         .map(filter -> toAccessPathChecker(subject, filter))
                         .allMatch(checker -> checker.hasAccess(path, principal,
                                 roleChecker)))

@@ -3,8 +3,18 @@ package org.vaadin.example.security;
 import jakarta.servlet.ServletContext;
 import java.io.IOException;
 import java.security.Principal;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.function.Function;
+import java.util.stream.Stream;
 
+import com.vaadin.flow.component.Component;
+import com.vaadin.flow.server.HandlerHelper;
+import com.vaadin.flow.server.ServiceInitEvent;
+import com.vaadin.flow.server.VaadinServlet;
+import com.vaadin.flow.server.VaadinServletContext;
+import com.vaadin.flow.server.auth.AccessPathChecker;
+import com.vaadin.flow.server.auth.RoutePathAccessChecker;
 import org.apache.shiro.config.Ini;
 import org.apache.shiro.web.env.IniWebEnvironment;
 import org.apache.shiro.web.env.WebEnvironment;
@@ -15,12 +25,6 @@ import org.apache.shiro.web.filter.mgt.PathMatchingFilterChainResolver;
 import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.vaadin.flow.component.Component;
-import com.vaadin.flow.server.ServiceInitEvent;
-import com.vaadin.flow.server.VaadinServletContext;
-import com.vaadin.flow.server.auth.AccessPathChecker;
-import com.vaadin.flow.server.auth.RoutePathAccessChecker;
 
 /**
  * A custom Shiro {@link WebEnvironment} for Vaadin integration.
@@ -45,8 +49,28 @@ public class VaadinShiroEnvironment extends IniWebEnvironment {
         ini.setSectionProperty("main", "perms",
                 VaadinInterceptingPermissionsAuthorizationFilter.class
                         .getName());
-
+        setVaadinUrls(ini);
         return ini;
+    }
+
+    /*
+     * /=anon /VAADIN/**=anon /themes/**=anon /favicon.ico=anon /sw.js=anon
+     * /sw-runtime-resources-precache.js=anon
+     */
+    private void setVaadinUrls(Ini ini) {
+        Ini.Section section = ini.getSection("urls");
+        Map<String, String> source = new LinkedHashMap<>(section);
+        section.clear();
+        // TODO: should add Vaadin servlet Mapping to the pattern
+        Stream.of(HandlerHelper.getPublicResourcesRequiringSecurityContext())
+                .forEach(pattern -> section.put(pattern, "anon"));
+        Stream.of(HandlerHelper.getPublicResources())
+                .forEach(pattern -> section.put(pattern, "anon"));
+
+        Stream.of(HandlerHelper.getPublicResourcesRoot())
+                .forEach(pattern -> section.put(pattern, "anon"));
+
+        section.putAll(source);
     }
 
     public static void installRoutePathAccessChecker(
