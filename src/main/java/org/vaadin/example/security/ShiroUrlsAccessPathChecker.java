@@ -1,8 +1,9 @@
 package org.vaadin.example.security;
 
 import java.security.Principal;
-import java.util.function.Function;
+import java.util.function.Predicate;
 
+import com.vaadin.flow.server.auth.AccessPathChecker;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.PatternMatcher;
@@ -15,8 +16,6 @@ import org.apache.shiro.web.filter.mgt.PathMatchingFilterChainResolver;
 import org.apache.shiro.web.servlet.OncePerRequestFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.vaadin.flow.server.auth.AccessPathChecker;
 
 /**
  * Implementation of {@link AccessPathChecker} based on Shiro 'urls'
@@ -44,7 +43,7 @@ class ShiroUrlsAccessPathChecker implements AccessPathChecker {
 
     @Override
     public boolean hasAccess(String vaadinPath, Principal principal,
-            Function<String, Boolean> roleChecker) {
+            Predicate<String> roleChecker) {
         // Shiro filters expects a leading / on path
         String path = "/" + vaadinPath;
         Subject subject = SecurityUtils.getSubject();

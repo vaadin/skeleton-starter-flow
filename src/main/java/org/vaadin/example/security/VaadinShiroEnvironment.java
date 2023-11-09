@@ -10,7 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
@@ -19,6 +19,8 @@ import com.vaadin.flow.server.HandlerHelper;
 import com.vaadin.flow.server.ServiceInitEvent;
 import com.vaadin.flow.server.VaadinServletContext;
 import com.vaadin.flow.server.auth.AccessPathChecker;
+import com.vaadin.flow.server.auth.DefaultNavigationCheckDecisionResolver;
+import com.vaadin.flow.server.auth.NavigationAccessControl;
 import com.vaadin.flow.server.auth.RoutePathAccessChecker;
 import org.apache.shiro.config.ConfigurationException;
 import org.apache.shiro.config.Ini;
@@ -154,9 +156,12 @@ public class VaadinShiroEnvironment extends IniWebEnvironment {
                     resolver);
             RoutePathAccessChecker routePathAccessChecker = new RoutePathAccessChecker(
                     accessPathChecker);
+            NavigationAccessControl navigationAccessControl = new NavigationAccessControl(
+                    List.of(routePathAccessChecker),
+                    new DefaultNavigationCheckDecisionResolver());
 
             String forbiddenUrl = shiroEnv.unauthorizedPath;
-            routePathAccessChecker.setLoginView(loginView);
+            navigationAccessControl.setLoginView(loginView);
             serviceInitEvent.getSource().getRouter().getRegistry()
                     .getTargetUrl(loginView).ifPresent(loginUrl -> {
                         String fullLoginUrl;
@@ -179,7 +184,7 @@ public class VaadinShiroEnvironment extends IniWebEnvironment {
                     });
             serviceInitEvent.getSource()
                     .addUIInitListener(uiInitEvent -> uiInitEvent.getUI()
-                            .addBeforeEnterListener(routePathAccessChecker));
+                            .addBeforeEnterListener(navigationAccessControl));
             LOGGER.info("Shiro based route path access checker enabled");
         } else {
             LOGGER.warn(
@@ -202,7 +207,7 @@ public class VaadinShiroEnvironment extends IniWebEnvironment {
 
         @Override
         public boolean hasAccess(String path, Principal principal,
-                Function<String, Boolean> roleChecker) {
+                Predicate<String> roleChecker) {
             String[] rolesArray = this.appliedPaths.entrySet().stream()
                     .filter(entry -> pathsMatch(entry.getKey(), path))
                     .map(entry -> (String[]) entry.getValue()).findFirst()
@@ -222,7 +227,7 @@ public class VaadinShiroEnvironment extends IniWebEnvironment {
 
         @Override
         public boolean hasAccess(String path, Principal principal,
-                Function<String, Boolean> roleChecker) {
+                Predicate<String> roleChecker) {
             String[] perms = this.appliedPaths.entrySet().stream()
                     .filter(entry -> pathsMatch(entry.getKey(), path))
                     .map(entry -> (String[]) entry.getValue()).findFirst()
