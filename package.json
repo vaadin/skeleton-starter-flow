@@ -132,7 +132,7 @@
     "transform-ast": "2.4.4",
     "typescript": "4.9.5",
     "vite": "3.2.7",
-    "vite-plugin-checker": "0.5.4",
+    "vite-plugin-checker": "0.6.4",
     "workbox-build": "6.5.4",
     "workbox-core": "6.5.4",
     "workbox-precaching": "6.5.4"
@@ -274,12 +274,12 @@
       "transform-ast": "2.4.4",
       "typescript": "4.9.5",
       "vite": "3.2.7",
-      "vite-plugin-checker": "0.5.4",
+      "vite-plugin-checker": "0.6.4",
       "workbox-build": "6.5.4",
       "workbox-core": "6.5.4",
       "workbox-precaching": "6.5.4"
     },
-    "hash": "f0c3c0cf4158f7bd361c36a57540c3b4465c3626b378a517fab617aa13a0cbe0"
+    "hash": "f5485c7552637cc4ccb765144f81229cca62dde9ea4ddae7910ced97232bacb9"
   },
   "overrides": {
     "@vaadin/accordion": "$@vaadin/accordion",
