@@ -16,9 +16,9 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
-        <vaadin.version>24.3.7</vaadin.version>
+        <vaadin.version>24.4.0.alpha14</vaadin.version>
         <drivers.downloader.phase>pre-integration-test</drivers.downloader.phase>
-        <jetty.version>11.0.14</jetty.version>
+        <jetty.version>11.0.20</jetty.version>
     </properties>
 
     <repositories>
@@ -90,6 +90,12 @@
             <groupId>com.vaadin</groupId>
             <!-- Replace artifactId with vaadin-core to use only free components -->
             <artifactId>vaadin</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.vaadin</groupId>
+                    <artifactId>hilla-dev</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- Added to provide logging output as Vaadin uses -->
