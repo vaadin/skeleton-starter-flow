@@ -19,7 +19,7 @@ import com.vaadin.flow.server.HandlerHelper;
 import com.vaadin.flow.server.ServiceInitEvent;
 import com.vaadin.flow.server.VaadinServletContext;
 import com.vaadin.flow.server.auth.AccessPathChecker;
-import com.vaadin.flow.server.auth.DefaultNavigationCheckDecisionResolver;
+import com.vaadin.flow.server.auth.DefaultAccessCheckDecisionResolver;
 import com.vaadin.flow.server.auth.NavigationAccessControl;
 import com.vaadin.flow.server.auth.RoutePathAccessChecker;
 import org.apache.shiro.config.ConfigurationException;
@@ -158,7 +158,7 @@ public class VaadinShiroEnvironment extends IniWebEnvironment {
                     accessPathChecker);
             NavigationAccessControl navigationAccessControl = new NavigationAccessControl(
                     List.of(routePathAccessChecker),
-                    new DefaultNavigationCheckDecisionResolver());
+                    new DefaultAccessCheckDecisionResolver());
 
             String forbiddenUrl = shiroEnv.unauthorizedPath;
             navigationAccessControl.setLoginView(loginView);
