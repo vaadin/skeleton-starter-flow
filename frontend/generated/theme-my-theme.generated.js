@@ -13,16 +13,16 @@ const createLinkReferences = (css, target) => {
   // [4] matches the url in '@import "..."'
   // [5] matches media query on @import statement
   const importMatcher = /(?:@media\s(.+?))?(?:\s{)?\@import\s*(?:url\(\s*['"]?(.+?)['"]?\s*\)|(["'])((?:\\.|[^\\])*?)\3)([^;]*);(?:})?/g
-  
+
   // Only cleanup if comment exist
   if(/\/\*(.|[\r\n])*?\*\//gm.exec(css) != null) {
     // clean up comments
     css = stripCssComments(css);
   }
-  
+
   var match;
   var styleCss = css;
-  
+
   // For each external url import add a link reference
   while((match = importMatcher.exec(css)) !== null) {
     styleCss = styleCss.replace(match[0], "");
@@ -60,6 +60,7 @@ export const injectGlobalCss = (css, target, first) => {
     target.adoptedStyleSheets = [...target.adoptedStyleSheets, sheet];
   }
 };
+import { webcomponentGlobalCssInjector } from 'Frontend/generated/jar-resources/theme-util.js';
 import stylesCss from 'themes/my-theme/styles.css?inline';
 import { typography } from '@vaadin/vaadin-lumo-styles/typography.js';
 import { color } from '@vaadin/vaadin-lumo-styles/color.js';
@@ -102,13 +103,16 @@ function hashFnv32a(str) {
  */
 function getHash(input) {
   let h1 = hashFnv32a(input); // returns 32 bit (as 8 byte hex string)
-  return h1 + hashFnv32a(h1 + input); 
+  return h1 + hashFnv32a(h1 + input);
 }
 export const applyTheme = (target) => {
+  if (target !== document) {
+    
+  }
   
   injectGlobalCss(stylesCss.toString(), target);
     
-  
+
   if (!document['_vaadintheme_my-theme_componentCss']) {
     registerStyles(
       'vaadin-text-field',
