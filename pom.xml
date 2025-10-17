@@ -10,15 +10,13 @@
     <packaging>war</packaging>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
-        <vaadin.version>24.9.2</vaadin.version>
-        <drivers.downloader.phase>pre-integration-test</drivers.downloader.phase>
-        <jetty.version>12.0.15</jetty.version>
+        <vaadin.version>25.0.0-beta1</vaadin.version>
+        <jetty.version>12.1.2</jetty.version>
     </properties>
 
     <repositories>
@@ -121,12 +119,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.14.1</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.1</version>
+                <version>3.4.0</version>
             </plugin>
             <!-- Jetty plugin for easy testing without a server -->
             <plugin>
@@ -238,7 +236,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-failsafe-plugin</artifactId>
-                        <version>2.22.2</version>
+                        <version>3.5.4</version>
                         <executions>
                             <execution>
                                 <goals>
