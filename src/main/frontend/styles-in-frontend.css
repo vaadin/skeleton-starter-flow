@@ -1,0 +1,9 @@
+@import "@vaadin/aura/aura.css";
+
+vaadin-text-field::part(input-field) {
+    background-color: blue;
+}
+
+vaadin-password-field::part(input-field) {
+    background-color: red;
+}

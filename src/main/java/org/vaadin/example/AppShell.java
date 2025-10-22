@@ -10,6 +10,7 @@ import com.vaadin.flow.server.PWA;
  */
 @PWA(name = "Project Base for Vaadin", shortName = "Project Base")
 //@StyleSheet("styles.css")
-@CssImport("@vaadin/aura/aura.css")
+//@CssImport("@vaadin/aura/aura.css") // works
+@CssImport("styles-in-frontend.css")
 public class AppShell implements AppShellConfigurator {
 }
