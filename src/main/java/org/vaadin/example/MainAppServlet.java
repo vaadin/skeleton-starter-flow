@@ -26,7 +26,7 @@ public class MainAppServlet extends HttpServlet {
                     + "charset=UTF-8'>");
 
             if (!isAuthenticated) {
-                out.println("<script type='module' src='/vaadin/web-component"
+                out.println("<script type='module' src='/web-component"
                         + "/login-form.js'></script>");
                 out.println("<script type='text/javascript' "
                         + "src='/log-in.js' defer></script>");
