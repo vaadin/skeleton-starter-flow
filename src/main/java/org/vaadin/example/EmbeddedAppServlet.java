@@ -8,8 +8,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(urlPatterns = {"/example"})
-public class MainAppServlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/embedded"})
+public class EmbeddedAppServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse response)
@@ -26,7 +26,7 @@ public class MainAppServlet extends HttpServlet {
                     + "charset=UTF-8'>");
 
             if (!isAuthenticated) {
-                out.println("<script type='module' src='/vaadin/web-component"
+                out.println("<script type='module' src='/main/web-component"
                         + "/login-form.js'></script>");
                 out.println("<script type='text/javascript' "
                         + "src='/log-in.js' defer></script>");

@@ -4,8 +4,7 @@ import com.vaadin.flow.component.WebComponentExporter;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.webcomponent.WebComponent;
 
-//@CssImport("@vaadin/aura/aura.css") // works
-@CssImport("styles-in-frontend.css")
+//@CssImport("styles-in-frontend.css")
 public class LoginFormExporter
         extends WebComponentExporter<LoginForm> {
     public LoginFormExporter() {

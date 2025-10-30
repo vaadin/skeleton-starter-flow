@@ -1,6 +1,7 @@
 package org.vaadin.example;
 
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.textfield.PasswordField;
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+@CssImport("styles-in-frontend.css")
 public class LoginForm extends Div {
     private TextField userName = new TextField();
     private PasswordField password =
