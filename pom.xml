@@ -15,7 +15,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
-        <vaadin.version>25.0.0-beta1</vaadin.version>
+        <vaadin.version>25.0.0-beta6</vaadin.version>
         <jetty.version>12.1.2</jetty.version>
     </properties>
 
@@ -88,13 +88,12 @@
             <groupId>com.vaadin</groupId>
             <!-- Replace artifactId with vaadin-core to use only free components -->
             <artifactId>vaadin</artifactId>
-            <!-- Remove the following exclussion if you want to enable Hilla -->
-            <exclusions>
-                <exclusion>
-                    <groupId>com.vaadin</groupId>
-                    <artifactId>hilla-dev</artifactId>
-                </exclusion>
-            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-dev</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <!-- Added to provide logging output as Vaadin uses -->
@@ -146,7 +145,6 @@
             <!--
                 Take care of synchronizing java dependencies and imports in
                 package.json and main.js files.
-                It also creates webpack.config.js if not exists yet.
             -->
             <plugin>
                 <groupId>com.vaadin</groupId>
@@ -158,6 +156,13 @@
                             <goal>prepare-frontend</goal>
                         </goals>
                     </execution>
+                    <execution>
+                        <id>package-for-production</id>
+                        <goals>
+                            <goal>build-frontend</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>
@@ -165,22 +170,8 @@
 
     <profiles>
         <profile>
-            <!-- Production mode is activated using -Pproduction -->
+            <!-- Production mode is activated by -Pproduction -->
             <id>production</id>
-
-            <dependencies>
-                <!-- Exclude development dependencies from production -->
-                <dependency>
-                    <groupId>com.vaadin</groupId>
-                    <artifactId>vaadin-core</artifactId>
-                    <exclusions>
-                        <exclusion>
-                            <groupId>com.vaadin</groupId>
-                            <artifactId>vaadin-dev</artifactId>
-                        </exclusion>
-                    </exclusions>
-                </dependency>
-            </dependencies>
             <build>
                 <plugins>
                     <plugin>
@@ -192,7 +183,6 @@
                                 <goals>
                                     <goal>build-frontend</goal>
                                 </goals>
-                                <phase>compile</phase>
                             </execution>
                         </executions>
                     </plugin>
