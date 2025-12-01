@@ -96,6 +96,11 @@
             <optional>true</optional>
         </dependency>
 
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>observability-kit-starter</artifactId>
+        </dependency>
+
         <!-- Added to provide logging output as Vaadin uses -->
         <!-- the unbound SLF4J no-operation (NOP) logger implementation -->
         <dependency>
@@ -112,6 +117,16 @@
             optional dependencies if not explicitly marked as optional here. -->
             <optional>true</optional>
         </dependency>
+
+        <!--
+        <dependency>
+            <groupId>com.github.oshi</groupId>
+            <artifactId>oshi-core</artifactId>
+            <version>6.9.1</version>
+            <optional>true</optional>
+        </dependency>
+        -->
+
     </dependencies>
 
     <build>
