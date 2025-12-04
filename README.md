@@ -8,9 +8,9 @@ There is also a [getting started tutorial](https://vaadin.com/tutorials/getting-
 
 To access it directly from github, clone the repository and import the project to the IDE of your choice as a Maven project. You need to have Java 8 or 11 installed.
 
-Run in development mode using `mvn jetty:run` and open [http://localhost:8080](http://localhost:8080) in the browser.
+Run in development mode using `mvn jetty:run` and open [http://localhost:8080](http://localhost:8080) in the browser. If you are deploying to a test server via IDE integration, you probably need to enable `development` profile to get `vaadin-dev` dependency into the development deployment.
 
-If you want to run your app locally in the production mode, run `mvn jetty:run-war`.
+If you want to run your app locally in the production mode, run `mvn jetty:run-war` or build a war file with `mvn package` and deploy it manually.
 
 ### Running Integration Tests
 
