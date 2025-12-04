@@ -15,7 +15,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
-        <vaadin.version>25.0.0-beta7</vaadin.version>
+        <vaadin.version>25.0.0-beta8</vaadin.version>
         <jetty.version>12.1.2</jetty.version>
     </properties>
 
@@ -90,6 +90,11 @@
             <artifactId>vaadin</artifactId>
         </dependency>
 
+
+		<!-- vaadin-dev dependency enables development mode. The optional declaration works
+		     with e.g. jetty maven plugin, but you need to enable it with e.g. a profile 
+		     in certain other development setups (such as deploying to a dev server via IDE)
+		     -->
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-dev</artifactId>
@@ -173,6 +178,17 @@
     </build>
 
     <profiles>
+    	<profile>
+            <id>development</id>
+            <dependencies>
+                <!-- Include development dependencies, non-optional needed  in certain test setups -->
+                <dependency>
+                    <groupId>com.vaadin</groupId>
+                    <artifactId>vaadin-dev</artifactId>
+                    <optional>false</optional>
+                </dependency>
+            </dependencies>
+        </profile>
         <profile>
             <id>it</id>
             <build>
