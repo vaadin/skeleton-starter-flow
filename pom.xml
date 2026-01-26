@@ -15,7 +15,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
-        <vaadin.version>25.0.0-beta9</vaadin.version>
+        <vaadin.version>25.0.3</vaadin.version>
         <jetty.version>12.1.2</jetty.version>
     </properties>
 
@@ -110,7 +110,7 @@
 
         <dependency>
             <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-testbench-junit5</artifactId>
+            <artifactId>vaadin-testbench-junit6</artifactId>
             <scope>test</scope>
             <!-- Test-scoped dependencies are always considered "optional", but
             their transitive dependencies may conflict with those from regular
